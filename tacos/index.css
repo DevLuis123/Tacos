@@ -1,4 +1,4 @@
-* {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -21,7 +21,7 @@ body {
   background: linear-gradient(to top left, #28b487, #7dd56f);
 }
 
-.show-modal {
+.ventana {
   font-size: 2rem;
   font-weight: 600;
   padding: 1.75rem 3.5rem;
@@ -44,13 +44,17 @@ body {
   background: none;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
 
-p {
-  font-size: 1.8rem;
+table th,td{
+  border: 1px solid black;
+}
+th{
+  color: red;
+  font-size: 20px;
+  padding: 5px;
+}
+td{
+  border: none;
 }
 
 /* -------------------------- */
@@ -64,9 +68,10 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: auto;
+  
 
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
@@ -85,6 +90,14 @@ p {
 }
 
 .encabezado {
-  margin: 15px;
+  margin: 25px;
   font-size: 35px;
+}
+
+.contenedor{
+  display: flex;
+  justify-content: center;
+}
+.contenido{
+
 }
