@@ -1,4 +1,4 @@
-  * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -44,16 +44,16 @@ body {
   background: none;
 }
 
-
-table th,td{
+table th,
+td {
   border: 1px solid black;
 }
-th{
+th {
   color: red;
   font-size: 20px;
   padding: 5px;
 }
-td{
+td {
   border: none;
 }
 
@@ -69,7 +69,6 @@ td{
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
-  
 
   background-color: rgb(255, 255, 255);
   padding: 6rem;
@@ -94,10 +93,9 @@ td{
   font-size: 35px;
 }
 
-.contenedor{
+.contenedor {
   display: flex;
   justify-content: center;
 }
-.contenido{
-
+.contenido {
 }
