@@ -21,7 +21,7 @@ body {
   background: linear-gradient(to top left, #28b487, #7dd56f);
 }
 
-.ventana {
+.show-modal {
   font-size: 2rem;
   font-weight: 600;
   padding: 1.75rem 3.5rem;
