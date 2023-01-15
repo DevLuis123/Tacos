@@ -1,4 +1,4 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -6,43 +6,37 @@
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif;
   color: #333;
-  line-height: 1.5;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  height: 100vh;  
   background: linear-gradient(to top left, #28b487, #7dd56f);
 }
-.contenido{
+header{
   display: flex;
   justify-content: center;
 }
-.contenido1{
-  text-align: center;
+.contenedor{
+  display: flex;
+  justify-content: center;
 
+}
+.contenido1{
+  display: grid;
+  width: 50%;
+  height: 86vh;
 }
 .contenido2{
   display: grid;
-
+  width: 50%;
+  height: 86vh;
 }
-
-.ventana {
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.75rem 3.5rem;
-  margin: 2rem;
-  border: none;
-  background-color: #fff;
-  color: #444;
-  border-radius: 10rem;
-  cursor: pointer;
+.contenido3{
+  display: grid;
+  width: 50%;
+  height: 86vh;
 }
 
 .close-modal {
@@ -55,17 +49,40 @@ body {
   border: none;
   background: none;
 }
-th {
+/* Estilos de tablas*/
+table{
   border: 1px solid black;
-  color: red;
+  padding: 10px;
+  border-radius: 5px;
+}
+th {
+  font-family: sans-serif;
+  color: black;
+  font-size: 20px;
+  padding: 5px;
+  
+}
+td {
+  text-align: center;
+  font-family: sans-serif;  
+  color: black;
   font-size: 20px;
   padding: 5px;
 }
-td {
+input[type=number]{
   border: none;
+  font-size:large;
+  text-align: center;
+  width: 40px;
+  height: 30px;
+  border-bottom: 2px solid black;
+}
+input[type=number]::before  {
+  color:red;
 }
 
-/* -------------------------- */
+
+
 /* CLASSES TO MAKE MODAL WORK */
 .hidden {
   display: none;
@@ -77,12 +94,11 @@ td {
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
-
   background-color: rgb(255, 255, 255);
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 10;
+  z-index: 10 ;
 }
 
 .overlay {
@@ -101,18 +117,24 @@ td {
   font-size: 35px;
 }
 
-td{
-  text-align: center;
-}
-input[type=text]{
-  font-size:large;
-  text-align: center;
-  width: 40px;
-  height: 30px;
-}
 
 /*botones estilos*/
-
+.btnMain {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 3rem;
+  margin: 15px 20px;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 14px 14px 14px 14px;
+  -moz-border-radius: 14px 14px 14px 14px;
+  -webkit-border-radius: 14px 14px 14px 14px;
+  border: 0px none #000000;
+  -webkit-box-shadow: -5px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -5px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: -5px 10px 5px 0px rgba(0,0,0,0.75);
+}
 .efect {
   border-color: #000000;
   background-image: -webkit-linear-gradient(45deg, #0ff153 50%, transparent 50%);

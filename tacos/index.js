@@ -8,7 +8,7 @@ const button = document.querySelector('.close-modal');
 const remove = function () {
   modal.classList.remove('hidden'); 
   overlay.classList.remove('hidden');
- };
+};
 
 const modale = function () {
   modal.classList.add('hidden');
@@ -38,3 +38,9 @@ document.addEventListener('keydown', function (e) {
     modale(); //llamamos a la funcion para añadirle la clase
   }
 });
+
+//Funcion para recargar la pagina 
+let refresh = document.getElementById('refresh');
+refresh.addEventListener('click', _ => {
+            location.reload();
+})
