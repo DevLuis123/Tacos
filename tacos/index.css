@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -11,29 +11,30 @@ html {
 body {
   font-family: sans-serif;
   color: #333;
-  height: 100vh;  
+  height: 100vh;
   background: linear-gradient(to top left, #28b487, #7dd56f);
 }
-header{
+header {
   display: flex;
   justify-content: center;
 }
-.contenedor{
-  display: flex;
-  justify-content: center;
 
+.contenedor {
+  display: flex;
+  justify-content: center;
 }
-.contenido1{
+
+.contenido1 {
   display: grid;
   width: 50%;
   height: 86vh;
 }
-.contenido2{
+.contenido2 {
   display: grid;
   width: 50%;
   height: 86vh;
 }
-.contenido3{
+.contenido3 {
   display: grid;
   width: 50%;
   height: 86vh;
@@ -50,7 +51,7 @@ header{
   background: none;
 }
 /* Estilos de tablas*/
-table{
+table {
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
@@ -60,28 +61,25 @@ th {
   color: black;
   font-size: 20px;
   padding: 5px;
-  
 }
 td {
   text-align: center;
-  font-family: sans-serif;  
+  font-family: sans-serif;
   color: black;
   font-size: 20px;
   padding: 5px;
 }
-input[type=number]{
+input[type='number'] {
   border: none;
-  font-size:large;
+  font-size: large;
   text-align: center;
   width: 40px;
   height: 30px;
   border-bottom: 2px solid black;
 }
-input[type=number]::before  {
-  color:red;
+input[type='number']::before {
+  color: red;
 }
-
-
 
 /* CLASSES TO MAKE MODAL WORK */
 .hidden {
@@ -98,7 +96,7 @@ input[type=number]::before  {
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 10 ;
+  z-index: 10;
 }
 
 .overlay {
@@ -117,7 +115,6 @@ input[type=number]::before  {
   font-size: 35px;
 }
 
-
 /*botones estilos*/
 .btnMain {
   font-size: 2rem;
@@ -131,13 +128,17 @@ input[type=number]::before  {
   -moz-border-radius: 14px 14px 14px 14px;
   -webkit-border-radius: 14px 14px 14px 14px;
   border: 0px none #000000;
-  -webkit-box-shadow: -5px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: -5px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: -5px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -5px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -5px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -5px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .efect {
   border-color: #000000;
-  background-image: -webkit-linear-gradient(45deg, #0ff153 50%, transparent 50%);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #0ff153 50%,
+    transparent 50%
+  );
   background-image: linear-gradient(45deg, #0ff153 50%, transparent 50%);
   background-position: 100%;
   background-size: 400%;
@@ -146,4 +147,5 @@ input[type=number]::before  {
 }
 .efect:hover {
   background-position: 0;
+  cursor: pointer;
 }

@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4062/4062916.png">
-    <link rel="stylesheet" href="index.css">
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/4062/4062916.png"
+    />
+    <link rel="stylesheet" href="index.css" />
     <title>TACOS EL CHINO</title>
   </head>
   <body>
@@ -13,125 +16,305 @@
 
     <div class="contenedor">
       <div class="contenido1">
-          <button class="show-modal btnMain efect">Mesa 1</button>
-          <button class="show-modal btnMain efect">Mesa 2</button>
-          <button class="show-modal btnMain efect">Mesa 3</button>
-          <button class="show-modal btnMain efect">Mesa 4</button>
-          <button class="show-modal btnMain efect">Mesa 5</button>
-        </div>
-        <div class="contenido2">
-          <button class="show-modal btnMain efect">Mesa 6</button>
-          <button class="show-modal btnMain efect">Mesa 7</button>
-          <button class="show-modal btnMain efect">Mesa 8</button>
-          <button class="show-modal btnMain efect">Mesa 9</button>
-          <button class="show-modal btnMain efect">Mesa 10</button>
-        </div>
-        <div class="contenido3">
-          <button class="show-modal btnMain efect">Mesa 11</button>
-          <button class="show-modal btnMain efect">Mesa 12</button>
-          <button class="show-modal btnMain efect">Mesa 13</button>
-          <button class="show-modal btnMain efect">Mesa 14</button>
-        </div>
-        
-      
+        <button class="show-modal btnMain efect mesaUno">Mesa 1</button>
+        <button class="show-modal btnMain efect mesaDos">Mesa 2</button>
+        <button class="show-modal btnMain efect mesaTres">Mesa 3</button>
+        <button class="show-modal btnMain efect mesaCuatro">Mesa 4</button>
+        <button class="show-modal btnMain efect mesaCinco">Mesa 5</button>
+      </div>
+      <div class="contenido2">
+        <button class="show-modal btnMain efect mesaSeis">Mesa 6</button>
+        <button class="show-modal btnMain efect mesaSiete">Mesa 7</button>
+        <button class="show-modal btnMain efect mesaOcho">Mesa 8</button>
+        <button class="show-modal btnMain efect mesaNueve">Mesa 9</button>
+        <button class="show-modal btnMain efect mesaDiez">Mesa 10</button>
+      </div>
+      <div class="contenido3">
+        <button class="show-modal btnMain efect mesaOnce">Mesa 11</button>
+        <button class="show-modal btnMain efect mesaDoce">Mesa 12</button>
+        <button class="show-modal btnMain efect mesaTrece">Mesa 13</button>
+        <button class="show-modal btnMain efect mesaCatorce">Mesa 14</button>
+      </div>
     </div>
-   
+
     <div class="modal hidden">
       <button class="close-modal">&times;</button>
       <div class="contenedor">
         <h1>Ventas</h1>
+        <h2>
+          <br /><br />
+          TOTAL =
+          <p class="total2">0</p>
+        </h2>
         <table>
           <thead>
             <tr>
-            <td></td>
-            <th>Adobada</th>
-            <th>Longaniza</th>
-            <th>Cachete</th>
-            <th>Chorizo</th>
-            <th>Res</th>
-            <th>Salchicha</th>
-            <th>Tripa</th>
-            <th>Mixto</th>
-          </tr>
+              <td></td>
+              <th>Adobada</th>
+              <th>Longaniza</th>
+              <th>Cachete</th>
+              <th>Chorizo</th>
+              <th>Res</th>
+              <th>Salchicha</th>
+              <th>Tripa</th>
+              <th>Mixto</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
-              <th >Tacos</th>
-              <td><input type="number" min="0" name="cantidad" class="tacoAdobada" /></td>
-              <td><input type="number" min="0"  name="cantidad" class="tacoLonganiza" /></td>
-              <td><input type="number" min="0"  name="cantidad" class="tacoCachete" /></td>
-              <td><input type="number" min="0"  name="cantidad" class="tacoChorizo" /></td>
-              <td><input type="number" min="0"  name="cantidad" class="tacoRes" /></td>
-              <td><input type="number" min="0"  name="cantidad" class="tacoSalchicha" /></td>
-              <td><input type="number" min="0"  name="cantidad" class="tacoTripa" /></td>
-              <td><input type="number" min="0"  name="cantidad" class="tacoMixto" /></td>
-              
+              <th>Tacos</th>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tacoAdobada"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tacoLonganiza"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tacoCachete"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tacoChorizo"
+                />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="tacoRes" />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tacoSalchicha"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tacoTripa"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tacoMixto"
+                />
+              </td>
             </tr>
             <tr>
               <th>Tortas</th>
-              <td><input type="number" min="0" name="cantidad" class="tortaAdobada" /></td>
               <td>
-                <input type="number" min="0"  name="cantidad" class="tortaLonganiza" />
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tortaAdobada"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tortaLonganiza"
+                />
               </td>
               <td><input type="number" min="0" class="tortaCachete" /></td>
               <td><input type="number" min="0" class="tortaChorizo" /></td>
               <td><input type="number" min="0" class="tortaRes" /></td>
-              <td><input type="number" min="0" name="cantidad" class="tortaSalchicha" /></td>
-              <td><input type="number" min="0" name="cantidad" class="tortaTripa" /></td>
-              <td><input type="number" min="0" name="cantidad" class="tortaMixto" /></td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tortaSalchicha"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tortaTripa"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="tortaMixto"
+                />
+              </td>
             </tr>
             <tr>
               <th>Quesadillas</th>
               <td>
-                <input type="number" min="0" name="cantidad" class="quesadillaAdobada" />
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaAdobada"
+                />
               </td>
               <td>
-                <input type="number" min="0" name="cantidad" class="quesadillaLonganiza" />
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaLonganiza"
+                />
               </td>
               <td>
-                <input type="number" min="0" name="cantidad" class="quesadillaCachete" />
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaCachete"
+                />
               </td>
               <td>
-                <input type="number" min="0" name="cantidad" class="quesadillaChorizo" />
-              </td>
-              <td><input type="number" min="0" name="cantidad" class="quesadillaRes" /></td>
-              <td>
-                <input type="number" min="0" name="cantidad" class="quesadillaSalchicha" />
-              </td>
-              <td>
-                <input type="number" min="0" name="cantidad" class="quesadillaTripa" />
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaChorizo"
+                />
               </td>
               <td>
-                <input type="number" min="0" name="cantidad" class="quesadillaMixto" />
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaRes"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaSalchicha"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaTripa"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="quesadillaMixto"
+                />
               </td>
             </tr>
             <tr>
               <th>Gringas</th>
-              <td><input type="number" min="0" name="cantidad" class="gringaAdobada" /></td>
               <td>
-                <input type="number" min="0" name="cantidad" class="gringaLonganiza" />
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaAdobada"
+                />
               </td>
-              <td><input type="number" min="0" name="cantidad" class="gringaCachete" /></td>
-              <td><input type="number" min="0" name="cantidad" class="gringaChorizo" /></td>
-              <td><input type="number" min="0" name="cantidad" class="gringaRes" /></td>
-              <td><input type="number" min="0" name="cantidad" class="gringaSalchicha" /></td>
-              <td><input type="number" min="0" name="cantidad" class="gringaTripa" /></td>
-              <td><input type="number" min="0" name="cantidad" class="gringaMixto" /></td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaLonganiza"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaCachete"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaChorizo"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaRes"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaSalchicha"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaTripa"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="gringaMixto"
+                />
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <br>
+      <br />
       <div class="total">
-       <center><button type="submit" name="total">total</button></center> 
-       <button id="refresh">Recargar</button>
+        <button id="refresh">Recargar</button>
+      </div>
     </div>
-    </div>
-    
+
     <div class="overlay hidden"></div>
-    
 
     <script src="index.js"></script>
-    
+    <script src="cuentas.js"></script>
   </body>
 </html>
