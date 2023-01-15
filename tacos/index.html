@@ -8,16 +8,25 @@
     <title>Modal window</title>
   </head>
   <body>
-    <h1 class="encabezado">TACOS EL CHINO</h1>
+    <div class="contenedor">
+      <div class="contenido1">
+        <h1 class="encabezado">TACOS EL CHINO</h1>
+      </div>
+      <div class="contenido2">
+        <button class="show-modal ventana efect">Mesa 1</button>
+        <button class="show-modal ventana efect">Mesa 2</button>
+        <button class="show-modal ventana efect">Mesa 3</button>
+        <button class="show-modal ventana efect">Mesa 4</button>
+        <button class="show-modal ventana efect">Mesa 5</button>
+      </div>
+    </div>
+   
 
-    <button class="show-modal ventana">Mesa 1</button>
-    <button class="show-modal ventana">Mesa 2</button>
-    <button class="show-modal ventana">Mesa 3</button>
-    <button class="show-modal ventana">Mesa 4</button>
-    <button class="show-modal ventana">Mesa 5</button>
+
 
     <div class="modal hidden">
       <button class="close-modal">&times;</button>
+      <button></button>
       <div class="contenedor">
         <h1>Ventas</h1>
         <br />
@@ -43,6 +52,7 @@
             <td><input type="text" name="cantidad" class="tacoSalchicha" /></td>
             <td><input type="text" name="cantidad" class="tacoTripa" /></td>
             <td><input type="text" name="cantidad" class="tacoMixto" /></td>
+            
           </tr>
           <tr>
             <th>Tortas</th>

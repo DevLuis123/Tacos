@@ -6,10 +6,9 @@ const showModal = document.querySelectorAll('.show-modal');
 const button = document.querySelector('.close-modal');
 
 const remove = function () {
-  modal.classList.remove('hidden'); //Remove the class that we put it but
-  // We not add a point because we dont select anything
-  overlay.classList.remove('hidden'); //Remove the class that we put it but
-};
+  modal.classList.remove('hidden'); 
+  overlay.classList.remove('hidden');
+ };
 
 const modale = function () {
   modal.classList.add('hidden');

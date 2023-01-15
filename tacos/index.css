@@ -20,12 +20,24 @@ body {
   justify-content: center;
   background: linear-gradient(to top left, #28b487, #7dd56f);
 }
+.contenido{
+  display: flex;
+  justify-content: center;
+}
+.contenido1{
+  text-align: center;
+
+}
+.contenido2{
+  display: grid;
+
+}
 
 .ventana {
   font-size: 2rem;
   font-weight: 600;
   padding: 1.75rem 3.5rem;
-  margin: 5rem 2rem;
+  margin: 2rem;
   border: none;
   background-color: #fff;
   color: #444;
@@ -43,12 +55,8 @@ body {
   border: none;
   background: none;
 }
-
-table th,
-td {
-  border: 1px solid black;
-}
 th {
+  border: 1px solid black;
   color: red;
   font-size: 20px;
   padding: 5px;
@@ -93,9 +101,27 @@ td {
   font-size: 35px;
 }
 
-.contenedor {
-  display: flex;
-  justify-content: center;
+td{
+  text-align: center;
 }
-.contenido {
+input[type=text]{
+  font-size:large;
+  text-align: center;
+  width: 40px;
+  height: 30px;
+}
+
+/*botones estilos*/
+
+.efect {
+  border-color: #000000;
+  background-image: -webkit-linear-gradient(45deg, #0ff153 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #0ff153 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 500ms ease-in-out;
+  transition: background 500ms ease-in-out;
+}
+.efect:hover {
+  background-position: 0;
 }
