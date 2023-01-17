@@ -1,2 +1,3 @@
-en la parte de la tabla solo acepta mumeros mayores a 0 y le puse el boton de recargar para actualizar la pagina 
+En vez del boton de recargar la pagina le cambie la funcion para calcular el total(Me falto cambiarle el nombre) 
+y otro boton ahi que puedas añadir para resetear todo a ceros.
 
