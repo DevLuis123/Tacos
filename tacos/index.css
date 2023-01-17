@@ -39,6 +39,10 @@ header {
   width: 50%;
   height: 86vh;
 }
+.contenedor2{
+  display: flex;
+  justify-content: center;
+}
 
 .close-modal {
   position: absolute;
@@ -53,14 +57,19 @@ header {
 /* Estilos de tablas*/
 table {
   border: 1px solid black;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
 }
 th {
   font-family: sans-serif;
-  color: black;
-  font-size: 20px;
-  padding: 5px;
+  background-color: #333;
+  color: rgb(206, 192, 192);
+  font-size: 15px;
+  padding: 2px;
+  border-radius: 3px;
+  -webkit-box-shadow: -4px 6px 11px -4px rgba(92,83,90,1);
+  -moz-box-shadow: -4px 6px 11px -4px rgba(92,83,90,1);
+  box-shadow: -4px 6px 11px -4px rgba(92,83,90,1);
 }
 td {
   text-align: center;
@@ -76,9 +85,6 @@ input[type='number'] {
   width: 40px;
   height: 30px;
   border-bottom: 2px solid black;
-}
-input[type='number']::before {
-  color: red;
 }
 
 /* CLASSES TO MAKE MODAL WORK */
