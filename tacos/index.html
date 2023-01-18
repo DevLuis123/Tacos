@@ -41,6 +41,10 @@
       <button class="close-modal">&times;</button>
       <div class="contenedor2">
         <h1>Ventas</h1>
+        <div class="total">
+          <button id="refresh" class="refresh">Obtener Total</button>
+          <p class="total2">0</p>
+        </div>
 
         <table>
           <thead>
@@ -301,7 +305,7 @@
             </tr>
           </tbody>
         </table>
-        <br>
+        <br />
         <table>
           <thead>
             <td></td>
@@ -310,189 +314,136 @@
             <th>Laton</th>
           </thead>
           <tbody>
-            <tr> <th>Coca Cola </th>  <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
-            <tr><th>Coca Cola Light</th>  <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
-            <tr><th>Fanta</th>  <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
-            <tr><th>Sprite</th> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
-            <tr><th>Estrella</th>  <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
-            <tr><th>Corona Extra</th>  <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
-            <tr><th>Corona Light</th>  <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
-            <tr><th>Modelo</th>  <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td> <td>
-              <input
-                type="number"
-                min="0"
-                name="cantidad"
-                class="quesadillaAdobada"
-              />
-            </td></tr>
+            <tr>
+              <th>Coca Cola</th>
+              <td>
+                <input type="number" min="0" name="cantidad" class="coca6ml" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="coca3ml" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+            </tr>
+            <tr>
+              <th>Coca Cola Light</th>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="cocaLight6ml"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="cocaLight3ml"
+                />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+            </tr>
+            <tr>
+              <th>Fanta</th>
+              <td>
+                <input type="number" min="0" name="cantidad" class="fanta6ml" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="fanta3ml" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+            </tr>
+            <tr>
+              <th>Sprite</th>
+              <td>
+                <input type="number" min="0" name="cantidad" class="srite6ml" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="srite3ml" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+            </tr>
+            <tr>
+              <th>Estrella</th>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="latonEstrella"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>Corona Extra</th>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="latonCoronaExtra"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>Corona Light</th>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="latonCoronaLight"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>Modelo</th>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input type="number" min="0" name="cantidad" class="hidden" />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="cantidad"
+                  class="latonModelo"
+                />
+              </td>
+            </tr>
           </tbody>
         </table>
-      <div class="total">
-        <button id="refresh">Recargar</button> 
       </div>
     </div>
-</div>
     <div class="overlay hidden"></div>
 
     <script src="index.js"></script>

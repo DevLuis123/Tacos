@@ -41,7 +41,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 //Funcion para recargar la pagina
-let refresh = document.getElementById('refresh');
-refresh.addEventListener('click', _ => {
-  location.reload();
-});
+//let refresh = document.getElementById('refresh');
+//refresh.addEventListener('click', _ => {
+//  location.reload();
+//});

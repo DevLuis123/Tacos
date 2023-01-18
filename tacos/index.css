@@ -39,7 +39,7 @@ header {
   width: 50%;
   height: 86vh;
 }
-.contenedor2{
+.contenedor2 {
   display: flex;
   justify-content: center;
 }
@@ -67,9 +67,9 @@ th {
   font-size: 15px;
   padding: 2px;
   border-radius: 3px;
-  -webkit-box-shadow: -4px 6px 11px -4px rgba(92,83,90,1);
-  -moz-box-shadow: -4px 6px 11px -4px rgba(92,83,90,1);
-  box-shadow: -4px 6px 11px -4px rgba(92,83,90,1);
+  -webkit-box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
+  -moz-box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
+  box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
 }
 td {
   text-align: center;
