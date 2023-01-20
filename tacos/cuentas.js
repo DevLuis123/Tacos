@@ -191,7 +191,7 @@ const gringas = function () {
     cuentaGringas = aux;
   }
   quesadillas();
-  total.textContent =
+  total.textContent = 
    cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas;
 };
 

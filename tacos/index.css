@@ -1,3 +1,7 @@
+:root {
+  --shadow-color: #fdfdfd;
+  --shadow-color-light: white;
+}
 * {
   margin: 0;
   padding: 0;
@@ -58,7 +62,7 @@ header {
 /* Estilos de tablas*/
 table {
   border: 1px solid black;
-  padding: 5px;
+  padding: 0px;
   border-radius: 5px;
 }
 th {
@@ -66,7 +70,6 @@ th {
   background-color: #333;
   color: rgb(206, 192, 192);
   font-size: 15px;
-  padding: 2px;
   border-radius: 3px;
   -webkit-box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
   -moz-box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
@@ -79,7 +82,7 @@ td {
   font-size: 20px;
   padding: 5px;
 }
-input[type='number'] {
+input[type='number'], .nada{
   border: none;
   font-size: large;
   text-align: center;
@@ -113,7 +116,9 @@ input[type='number'] {
   background-color: rgb(255, 255, 255);
   padding: 6rem;
   border-radius: 5px;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -4px 4px 15px 0px rgba(0,0,0,0.39);
+-moz-box-shadow: -4px 4px 15px 0px rgba(0,0,0,0.39);
+box-shadow: -4px 4px 15px 0px rgba(0,0,0,0.39);
   z-index: 10;
 }
 
@@ -129,7 +134,7 @@ input[type='number'] {
 }
 
 .encabezado {
-  margin: 25px;
+  margin: 20px 0 0 0;
   font-size: 35px;
 }
 
@@ -151,11 +156,7 @@ input[type='number'] {
 }
 .efect {
   border-color: #000000;
-  background-image: -webkit-linear-gradient(
-    45deg,
-    #0ff153 50%,
-    transparent 50%
-  );
+  background-image: -webkit-linear-gradient( 45deg, #0ff153 50%, transparent 50% );
   background-image: linear-gradient(45deg, #0ff153 50%, transparent 50%);
   background-position: 100%;
   background-size: 400%;
@@ -195,5 +196,8 @@ input[type='number'] {
   background: -moz-linear-gradient(top, #28b487, #7dd56f);
 }
 .button:hover {
-  background: #6f737a;
+ background: -webkit-gradient(linear, 0 0, 0 100%, from(#7dd56f), to(#28b487));
+  background: -moz-linear-gradient(top,#7dd56f, #28b487);
 }
+
+
