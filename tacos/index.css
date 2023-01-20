@@ -18,12 +18,27 @@ header {
   display: flex;
   justify-content: center;
 }
-
+/* contenedores */
 .contenedor {
   display: flex;
   justify-content: center;
 }
+.contenedor2{
+  display: flex;
+  justify-content: center;
+  margin-right: 5px;
+  height: 5rem;
+}
+.contenedor3 {
+  display: flex;
+  justify-content: center;
+}
+.contenedor4{
+  display: inline-flex;
+  flex-direction: row;
+}
 
+/*contenidos */
 .contenido1 {
   display: grid;
   width: 50%;
@@ -39,21 +54,7 @@ header {
   width: 50%;
   height: 86vh;
 }
-.contenedor2 {
-  display: flex;
-  justify-content: center;
-}
 
-.close-modal {
-  position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 5rem;
-  color: #333;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
 /* Estilos de tablas*/
 table {
   border: 1px solid black;
@@ -88,6 +89,17 @@ input[type='number'] {
 }
 
 /* CLASSES TO MAKE MODAL WORK */
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
 .hidden {
   display: none;
 }
@@ -125,8 +137,7 @@ input[type='number'] {
 .btnMain {
   font-size: 2rem;
   font-weight: 500;
-  padding: 3rem;
-  margin: 15px 20px;
+  margin: 20px 30px;
   border: none;
   background-color: #fff;
   color: #444;
@@ -154,4 +165,35 @@ input[type='number'] {
 .efect:hover {
   background-position: 0;
   cursor: pointer;
+}
+
+/*Estilos extras*/
+.total2{
+  font-size: 20px;
+  margin: 10px 10px 0 10px ;
+}
+
+.space{
+  width: 0.5cm;
+}
+
+.button {
+  font-family: Georgia;
+  color: #000000;
+  font-size: 17px;
+  padding: 9px;
+  text-decoration: none;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #000000;
+  -moz-box-shadow: 0px 1px 3px #000000;
+  box-shadow: 0px 1px 3px #000000;
+  text-shadow: 1px 1px 30px #666666;
+  border: solid #000000 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#28b487), to(#7dd56f));
+  background: -moz-linear-gradient(top, #28b487, #7dd56f);
+}
+.button:hover {
+  background: #6f737a;
 }

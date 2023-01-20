@@ -192,7 +192,7 @@ const gringas = function () {
   }
   quesadillas();
   total.textContent =
-    cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas;
+   cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas;
 };
 
 calc.addEventListener('click', gringas);
