@@ -13,6 +13,7 @@ let cuentaQuesadillas = 0;
 let cuentaGringas = 0;
 
 const tacos = function () {
+  cuentaTacos = 0;
   let tacoAdobada = Number(document.querySelector('.tacoAdobada').value);
   let tacoLonganiza = Number(document.querySelector('.tacoLonganiza').value);
   let tacoCachete = Number(document.querySelector('.tacoCachete').value);
@@ -54,14 +55,15 @@ const torta60 = 60;
 const tortaM = 70;
 
 const tortas = function () {
-  let tortaAdobada = document.querySelector('.tortaAdobada').value;
-  let tortaLonganiza = document.querySelector('.tortaLonganiza').value;
-  let tortaCachete = document.querySelector('.tortaCachete').value;
-  let tortaChorizo = document.querySelector('.tortaChorizo').value;
-  let tortaRes = document.querySelector('.tortaRes').value;
-  let tortaSalchicha = document.querySelector('.tortaSalchicha').value;
-  let tortaTripa = document.querySelector('.tortaTripa').value;
-  let tortaMixto = document.querySelector('.tortaMixto').value;
+  cuentaTortas = 0;
+  let tortaAdobada = Number(document.querySelector('.tortaAdobada').value);
+  let tortaLonganiza = Number(document.querySelector('.tortaLonganiza').value);
+  let tortaCachete = Number(document.querySelector('.tortaCachete').value);
+  let tortaChorizo = Number(document.querySelector('.tortaChorizo').value);
+  let tortaRes = Number(document.querySelector('.tortaRes').value);
+  let tortaSalchicha = Number(document.querySelector('.tortaSalchicha').value);
+  let tortaTripa = Number(document.querySelector('.tortaTripa').value);
+  let tortaMixto = Number(document.querySelector('.tortaMixto').value);
 
   let aux = 0;
 
@@ -88,7 +90,6 @@ const tortas = function () {
     //total.textContent = aux;
     cuentaTortas = aux;
   }
-  tacos();
 };
 
 const quesadilla60 = 60;
@@ -96,6 +97,7 @@ const quesadilla70 = 70;
 const quesadillaMixta = 80;
 
 const quesadillas = function () {
+  cuentaQuesadillas = 0;
   let quesadillaAdobada = Number(
     document.querySelector('.quesadillaAdobada').value
   );
@@ -144,7 +146,6 @@ const quesadillas = function () {
     //total.textContent = aux;
     cuentaQuesadillas = aux;
   }
-  tortas();
 };
 
 const gringa120 = 120;
@@ -152,6 +153,7 @@ const gringa130 = 130;
 const gringaM = 140;
 
 const gringas = function () {
+  cuentaGringas = 0;
   let gringaAdobada = Number(document.querySelector('.gringaAdobada').value);
   let gringaLonganiza = Number(
     document.querySelector('.gringaLonganiza').value
@@ -190,9 +192,11 @@ const gringas = function () {
     //total.textContent = aux;
     cuentaGringas = aux;
   }
+  tacos();
+  tortas();
   quesadillas();
-  total.textContent = 
-   cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas;
+  total.textContent =
+    cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas;
 };
 
 calc.addEventListener('click', gringas);
