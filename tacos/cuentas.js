@@ -195,8 +195,12 @@ const gringas = function () {
   tacos();
   tortas();
   quesadillas();
-  total.textContent =
-    cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas;
+  total.textContent = cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas + ".ºº";
 };
 
 calc.addEventListener('click', gringas);
+
+
+
+//TODO funcionespara la tabla de las bebidas 
+
