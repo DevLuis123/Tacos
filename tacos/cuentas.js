@@ -2,6 +2,15 @@
 
 let total = document.querySelector('.total2');
 const calc = document.querySelector('.refresh');
+const borrar = document.querySelector('.borrar');
+
+borrar.addEventListener('click', function () {
+  let reiniciar = document.querySelectorAll('.active');
+  for (let i = 0; i < reiniciar.length; i++) {
+    reiniciar[i].value = '';
+  }
+  total.textContent = 0 + '.ºº';
+});
 
 const taco15 = 15;
 const taco20 = 20;
@@ -199,4 +208,25 @@ const gringas = function () {
     cuentaTacos + cuentaTortas + cuentaQuesadillas + cuentaGringas + '.ºº';
 };
 
-calc.addEventListener('click', gringas);
+const mesaUno = document.querySelector('.mesaUno');
+const mesaDos = document.querySelector('.mesaDos');
+const mesaTres = document.querySelector('.mesaTres');
+const mesaCuatro = document.querySelector('.mesaCuatro');
+const mesaaCinco = document.querySelector('.mesaCinco');
+const mesaSeis = document.querySelector('.mesaSeis');
+const mesaSiete = document.querySelector('.mesaSiete');
+const mesaOcho = document.querySelector('.mesaOcho');
+const mesaNueve = document.querySelector('.mesaNueve');
+const mesaOnce = document.querySelector('.mesaOnce');
+const mesaDoce = document.querySelector('.mesaDoce');
+const mesaTrece = document.querySelector('.mesaTrece');
+const mesaCatorce = document.querySelector('.mesaCatorce');
+
+let ventas = document.querySelectorAll('.active');
+
+if (mesaUno) {
+  for (let i = 0; i < ventas.length; i++) {
+    ventas[i].classList.add('mesaUno');
+    calc.addEventListener('click', gringas);
+  }
+}
