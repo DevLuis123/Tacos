@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4062/4062916.png" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="ticket.css"/>
     <title>TACOS EL CHINO</title>
   </head>
   <body>
@@ -13,24 +14,24 @@
     
     <div class="contenedor">
       <div class="contenido1">
-        <button class="show-modal btnMain efect mesaUno">Mesa 1</button>
-        <button class="show-modal btnMain efect mesaDos">Mesa 2</button>
-        <button class="show-modal btnMain efect mesaTres">Mesa 3</button>
-        <button class="show-modal btnMain efect mesaCuatro">Mesa 4</button>
-        <button class="show-modal btnMain efect mesaCinco">Mesa 5</button>
+        <button class="show-modal btnMain efect mesa1" id="1">Mesa 1</button>
+        <button class="show-modal btnMain efect mesa2" id="2">Mesa 2</button>
+        <button class="show-modal btnMain efect mesa3" id="3">Mesa 3</button>
+        <button class="show-modal btnMain efect mesa4" id="4">Mesa 4</button>
+        <button class="show-modal btnMain efect mesa5" id="5">Mesa 5</button>
       </div>
       <div class="contenido2">
-        <button class="show-modal btnMain efect mesaSeis">Mesa 6</button>
-        <button class="show-modal btnMain efect mesaSiete">Mesa 7</button>
-        <button class="show-modal btnMain efect mesaOcho">Mesa 8</button>
-        <button class="show-modal btnMain efect mesaNueve">Mesa 9</button>
-        <button class="show-modal btnMain efect mesaDiez">Mesa 10</button>
+        <button class="show-modal btnMain efect mesa6" id="6">Mesa 6</button>
+        <button class="show-modal btnMain efect mesa7" id="7">Mesa 7</button>
+        <button class="show-modal btnMain efect mesa8" id="8">Mesa 8</button>
+        <button class="show-modal btnMain efect mesa9" id="9">Mesa 9</button>
+        <button class="show-modal btnMain efect mesa10" id="10">Mesa 10</button>
       </div>
       <div class="contenido3">
-        <button class="show-modal btnMain efect mesaOnce">Mesa 11</button>
-        <button class="show-modal btnMain efect mesaDoce">Mesa 12</button>
-        <button class="show-modal btnMain efect mesaTrece">Mesa 13</button>
-        <button class="show-modal btnMain efect mesaCatorce">Mesa 14</button>
+        <button class="show-modal btnMain efect mesa11" name="mesa11">Mesa 11</button>
+        <button class="show-modal btnMain efect mesa12" name="mesa12">Mesa 12</button>
+        <button class="show-modal btnMain efect mesa13" name="mesa13">Mesa 13</button>
+        <button class="show-modal btnMain efect mesa14" name="mesa14">Mesa 14</button>
       </div>
     </div>
 
@@ -47,7 +48,7 @@
             <thead>
               <tr>
                 <td></td>
-                <th>Adobada</th>
+                <th>Adobad</th>
                 <th>Longaniza</th>
                 <th>Cachete</th>
                 <th>Chorizo</th>
@@ -61,109 +62,109 @@
               <tr>
                 <th>Tacos</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoAdobada active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoAdobada active tacos ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoLonganiza active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoLonganiza active tacos ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoCachete active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoCachete active tacos" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoChorizo active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoChorizo active tacos" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoRes active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoRes active tacos" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoSalchicha active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoSalchicha active tacos" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoTripa active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoTripa active tacos" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tacoMixto active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tacoMixto active tacos" />
                 </td>
               </tr>
               <tr>
                 <th>Tortas</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tortaAdobada active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaAdobada active tortas ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tortaLonganiza active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaLonganiza active tortas ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" class="tortaCachete active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaCachete active tortas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" class="tortaChorizo active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaChorizo active tortas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" class="tortaRes active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaRes active tortas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tortaSalchicha active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaSalchicha active tortas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tortaTripa active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaTripa active tortas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="tortaMixto active" />
+                  <input type="number" value="" min="0" name="cantidad" class="tortaMixto active tortas" />
                 </td>
               </tr>
               <tr>
                 <th>Quesadillas</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="quesadillaAdobada active" />
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaAdobada active quesadillas ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="quesadillaLonganiza active" />
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaLonganiza active quesadillas ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="quesadillaCachete active" />
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaCachete active quesadillas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="quesadillaChorizo active" />
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaChorizo active quesadillas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="quesadillaRes active" />
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaRes active quesadillas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="quesadillaSalchicha active" />
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaSalchicha active quesadillas" />
                 </td>
                 <td>
-                  <input  type="number" value="" min="0"  name="cantidad" class="quesadillaTripa active"  />
+                  <input  type="number" value="" min="0"  name="cantidad" class="quesadillaTripa active quesadillas"  />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="quesadillaMixto active" />
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaMixto active quesadillas" />
                 </td>
               </tr>
               <tr>
                 <th>Gringas</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaAdobada active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaAdobada active gringas ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaLonganiza active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaLonganiza active gringas ado" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaCachete active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaCachete active gringas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaChorizo active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaChorizo active gringas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaRes active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaRes active gringas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaSalchicha active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaSalchicha active gringas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaTripa active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaTripa active gringas" />
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="gringaMixto active" />
+                  <input type="number" value="" min="0" name="cantidad" class="gringaMixto active gringas" />
                 </td>
               </tr>
             </tbody>
@@ -276,14 +277,15 @@
             </tbody>
           </table>
         </div>
+    		<button class="imprimir button" onclick="window.print()">Imprimir Ticket</button>
         <button id="reload" class="borrar button">Borrar</button>
     </div>
   </div>
   <div class="overlay hidden"></div>
 
-  <!-- script para java-->
-    <script src="index.js"></script>
-    <script src="cuentas.js"></script>
-    <script src="mesas.js"></script>
+  <!-- script para javascript-->
+    <script src="app.js"></script>
+    <script src="ticket.js"></script>
+   <!--- <script src="app.js"></script> -->
   </body>
 </html>
