@@ -277,12 +277,34 @@
             </tbody>
           </table>
         </div>
-    		<button class="imprimir button" onclick="window.print()">Imprimir Ticket</button>
+    		<button class="imprimir button">Imprimir Ticket</button>
         <button id="reload" class="borrar button">Borrar</button>
+        
+        <div class="ticket hidden">
+          <div id="titulo">TACOS EL CHINO</div>
+	<div id="datos">
+		<p><span class="etiqueta">Fecha:</span> 14 de abril de 2023</p>
+	</div>
+	<table class="productos hidden">
+		<thead>
+			<tr>
+				<th>Producto</th>
+				<th>Cantidad</th>
+				<th>Subtotal</th>
+			</tr>
+		</thead>
+		<tbody>
+						
+		</tbody>
+	</table>
+	<div id="total">Total: $prueba</div>
+</body>
+</html>
+        </div>
     </div>
   </div>
   <div class="overlay hidden"></div>
-
+  
   <!-- script para javascript-->
     <script src="app.js"></script>
     <script src="ticket.js"></script>

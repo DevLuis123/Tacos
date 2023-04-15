@@ -263,6 +263,107 @@ const logicaMesa = function (noMesa) {
   setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'Gringa'), gringas);
 };
 
+// Creamos un mapa para el orden de las carnes
+const carnes = new Map([
+  [0, 'Adobada'],
+  [1, 'Longaniza'],
+  [2, 'Cachete'],
+  [3, 'Chorizo'],
+  [4, 'Res'],
+  [5, 'Salchicha'],
+  [6, 'Tripa'],
+  [7, 'Mixto'],
+]);
+
+const ticketBtn = document.querySelector('.imprimir');
+const tabla = document.querySelector('.productos');
+
+const anadirTicket = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const tacos = getLocalStorageConsumido(`${noMesa}`, 'Tacos');
+  for (let i = 0; i < tacos.length; i++) {
+    if (tacos[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Taco ${carnes.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = tacos[i];
+      let celda3 = fila.insertCell();
+      i === 0 || i === 1
+        ? (celda3.innerHTML = tacos[i] * 15)
+        : (celda3.innerHTML = tacos[i] * 20);
+    }
+  }
+};
+//anadirTicket(5);
+const anadirTicket2 = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const tortas = getLocalStorageConsumido(`${noMesa}`, 'Tortas');
+  for (let i = 0; i < tortas.length; i++) {
+    if (tortas[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Torta ${carnes.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = tortas[i];
+      let celda3 = fila.insertCell();
+      i === 0 || i === 1
+        ? (celda3.innerHTML = tortas[i] * 50)
+        : (celda3.innerHTML = tortas[i] * 60);
+    }
+  }
+};
+
+const anadirTicket3 = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const quesadillas = getLocalStorageConsumido(`${noMesa}`, 'Ques');
+  for (let i = 0; i < quesadillas.length; i++) {
+    if (quesadillas[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Quesadilla ${carnes.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = quesadillas[i];
+      let celda3 = fila.insertCell();
+      i === 0 || i === 1
+        ? (celda3.innerHTML = quesadillas[i] * 60)
+        : (celda3.innerHTML = quesadillas[i] * 70);
+    }
+  }
+};
+
+//console.log(tabla.innerHTML);
+
+function imprimirContenido() {
+  let contenido = document.querySelector('.ticket').innerHTML;
+  let ventanaImpresion = window.open('', '', 'height=500,width=700');
+  //ventanaImpresion.document.write('<html><head><title>TACOS EL CHINO</title>');
+  ventanaImpresion.document.write('</head><body >');
+
+  ventanaImpresion.document.write(contenido);
+
+  ventanaImpresion.document.write('<br>');
+  ventanaImpresion.document.write('REVISE SU CAMBIO ANTES DE SALIR');
+  ventanaImpresion.document.write('</body></html>');
+  ventanaImpresion.document.close();
+  ventanaImpresion.focus();
+  ventanaImpresion.print();
+  ventanaImpresion.close();
+}
+
+for (let index of showModal.keys()) {
+  showModal[index].addEventListener('click', function () {
+    anadirTicket(index + 1);
+    anadirTicket2(index + 1);
+    anadirTicket3(index + 1);
+  });
+}
+
+ticketBtn.addEventListener('click', imprimirContenido);
+
 for (let i = 0; i < showModal.length; i++) {
   const mesas = document.querySelector('.mesas');
 
@@ -273,6 +374,7 @@ for (let i = 0; i < showModal.length; i++) {
       logicaMesa(i + 1);
       totalBtn.addEventListener('click', function (e) {
         e.preventDefault();
+        //anadirTicket(i + 1);
         guardarCantidad(i + 1);
         resetArrays();
         venta = [];
