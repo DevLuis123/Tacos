@@ -37,14 +37,9 @@
 
   <div class="modal hidden">
     <button class="close-modal">&times;</button>
-    <h1 class="mesas">Mesa</h1>
+    <h1 class="mesas"></h1>
     <div class="contenedor4">
-      <div class="contenedor2">
-        <button id="refresh" class="refresh button">Total</button>
-        <p class="total2 nada">0.ºº</p>
-      </div>
-        <br class="contenedor3">
-          <table>
+          <table class="space_down">
             <thead>
               <tr>
                 <td></td>
@@ -169,30 +164,85 @@
               </tr>
             </tbody>
           </table>
-          <!--  Div para dar separacion-->
+          <div class="space_lefth"></div>
+          <table class="space_down">
+                <thead>
+                  <td></td>
+                  <th>Extras</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Cebollitas</th>
+                    <td><input type="number" min="0" class=""></td>
+                  </tr>
+                  <tr>
+                    <th>Doraditas</th>
+                    <td><input type="number" min="0" class=""></td>
+                  </tr>
+                  <tr>
+                    <th>Queso</th>
+                    <td><input type="number" min="0" class=""></td>
+                  </tr>
+                </tbody>
+              </table>
+          <table>
+            <thead>
+              <td></td>
+              <th>Cantidad</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Hamburguesa Sencilla</th>
+                <td><input type="number" min="0" class=""></td>
+              </tr>
+              <tr>
+                <th>Hamburguesa con Papas</th>
+                <td><input type="number" min="0" class=""></td>
+              </tr>
+              <tr>
+                <th>Dogo Sencilla</th>
+                <td><input type="number" min="0" class=""></td>
+              </tr>
+              <tr>
+                <th>Dogo con Tocino</th>
+                <td><input type="number" min="0" class=""></td>
+              </tr>
+              <tr>
+                <th>Paquete 3 Dogos Sencillos</th>
+                <td><input type="number" min="0" class=""></td>
+              </tr>
+              <tr>
+                <th>Paquete 3 Dogos con Tocino</th>
+                <td><input type="number" min="0" class=""></td>
+              </tr>
+              <tr>
+                <th>Orden de Papas</th>
+                <td><input type="number" min="0" class=""></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="space"></div>
           <table>
             <thead>
               <td></td>
               <th>600ml</th>
               <th>350ml</th>
-              
             </thead>
             <tbody>
               <tr>
                 <th>Coca Cola</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="coca6ml active" />
+                  <input type="number" value="" min="0" name="cantidad" class="coca6ml active">
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="coca3ml active" />
+                  <input type="number" value="" min="0" name="cantidad" class="coca3ml active" >
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
+                  <input type="number" value="" min="0" name="cantidad" class="hidden" >
                 </td>
               </tr>
               <tr>
-                <th>Coca Cola Light</th>
+                <th>Coca Light</th>
                 <td>
                   <input type="number" value="" min="0" name="cantidad" class="cocaLight6ml active" />
                 </td>
@@ -206,80 +256,68 @@
               <tr>
                 <th>Fanta</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="fanta6ml active" />
+                  <input type="number" value="" min="0" name="cantidad" class="fanta6ml active" >
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="fanta3ml active" />
+                  <input type="number" value="" min="0" name="cantidad" class="fanta3ml active">
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
+                  <input type="number" value="" min="0" name="cantidad" class="hidden" >
                 </td>
               </tr>
               <tr>
                 <th>Sprite</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="srite6ml active" />
+                  <input type="number" value="" min="0" name="cantidad" class="srite6ml active" >
                 </td>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="srite3ml active" />
+                  <input type="number" value="" min="0" name="cantidad" class="srite3ml active" >
                 </td>
-                <th>Laton</th>
               </tr>
-              
+            </tbody>
+          </table>
+          <div class="space"></div>
+          <table>
+            <thead>
+              <td></td>
+              <th>Laton</th>
+            </thead>
+            <tbody>
               <tr>
                 <th>Estrella</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="latonEstrella active" />
+                  <input type="number" value="" min="0" name="cantidad" class="latonEstrella active" >
                 </td>
               </tr>
               <tr>
                 <th>Corona Extra</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="latonCoronaExtra active" />
+                  <input type="number" value="" min="0" name="cantidad" class="latonCoronaExtra active" >
                 </td>
               </tr>
               <tr>
                 <th>Corona Light</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="latonCoronaLight active" />
+                  <input type="number" value="" min="0" name="cantidad" class="latonCoronaLight active" >
                 </td>
               </tr>
               <tr>
                 <th>Modelo</th>
                 <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
-                </td>
-                <td>
-                  <input type="number" value="" min="0" name="cantidad" class="latonModelo active" />
+                  <input type="number" value="" min="0" name="cantidad" class="latonModelo active" >
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-    		<button class="imprimir button">Imprimir Ticket</button>
+        <div class="parte-baja-hidden">
+        <button class="imprimir button">Imprimir Ticket</button>
         <button id="reload" class="borrar button">Borrar</button>
+        <button id="refresh" class="refresh button">Total</button>
+        <p class="total2">0.ºº</p>
+        </div>
         
+        <!-- //! Generar ticket para la compra -->
         <div class="ticket hidden">
           <div id="titulo">TACOS EL CHINO</div>
 	<div id="datos">
@@ -297,8 +335,8 @@
 						
 		</tbody>
 	</table>
-	<div id="total">Total: $prueba</div>
-</body>
+	<div id="total">Total: $prueba</div> 
+</body> 
 </html>
         </div>
     </div>
@@ -308,6 +346,6 @@
   <!-- script para javascript-->
     <script src="app.js"></script>
     <script src="ticket.js"></script>
-   <!--- <script src="app.js"></script> -->
+  <!--- <script src="app.js"></script> -->
   </body>
 </html>

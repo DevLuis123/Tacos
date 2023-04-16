@@ -38,8 +38,9 @@ header {
   justify-content: center;
 }
 .contenedor4 {
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
 }
 
 /*contenidos */
@@ -58,32 +59,34 @@ header {
   width: 50%;
   height: 86vh;
 }
+.parte-baja-hidden{
+  display: flex;
+  flex-direction: row;
+  margin-top: 3px;
 
+}
 /* Estilos de tablas*/
 table {
   border: 1px solid black;
-  padding: 0px;
   border-radius: 5px;
+  padding: 1px;
 }
 th {
   font-family: sans-serif;
   background-color: #333;
   color: rgb(206, 192, 192);
+  height: 10px;
   font-size: 15px;
   border-radius: 3px;
-  -webkit-box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
-  -moz-box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
-  box-shadow: -4px 6px 11px -4px rgba(92, 83, 90, 1);
 }
 td {
   text-align: center;
   font-family: sans-serif;
   color: black;
   font-size: 20px;
-  padding: 5px;
+  padding: 0px;
 }
-input[type='number'],
-.nada {
+input[type='number'],.nada {
   border: none;
   font-size: large;
   text-align: center;
@@ -113,9 +116,9 @@ input[type='number'],
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: auto;
   background-color: rgb(255, 255, 255);
-  padding: 6rem;
+  padding: 2% 6%;
+  width: 683px;
   border-radius: 5px;
   -webkit-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
   -moz-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
@@ -139,7 +142,7 @@ input[type='number'],
   font-size: 35px;
 }
 
-/*botones estilos*/
+/*//!botones estilos*/
 .btnMain {
   font-size: 2rem;
   font-weight: 500;
@@ -170,16 +173,31 @@ input[type='number'],
   cursor: pointer;
 }
 
-/*Estilos extras*/
+
+
+
+/*//!Estilos extras*/
 .total2 {
-  font-size: 20px;
-  margin: 10px 10px 0 10px;
+  font-size: 30px;
 }
-
+.space_lefth{
+  width: 0.3cm;
+}
 .space {
-  width: 0.5cm;
+  width: 1.08cm;
 }
-
+.imprimir{
+  margin-right: 30px;
+}
+.borrar{
+  margin-right: 55%;
+}
+.refresh{
+  margin-right: 10px;
+}
+.space_down{
+  margin-bottom: 10px;
+}
 .button {
   font-family: Georgia;
   color: #000000;
@@ -201,3 +219,4 @@ input[type='number'],
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#7dd56f), to(#28b487));
   background: -moz-linear-gradient(top, #7dd56f, #28b487);
 }
+
