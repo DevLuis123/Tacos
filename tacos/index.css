@@ -59,11 +59,10 @@ header {
   width: 50%;
   height: 86vh;
 }
-.parte-baja-hidden{
+.parte-baja-hidden {
   display: flex;
   flex-direction: row;
   margin-top: 3px;
-
 }
 /* Estilos de tablas*/
 table {
@@ -86,7 +85,8 @@ td {
   font-size: 20px;
   padding: 0px;
 }
-input[type='number'],.nada {
+input[type='number'],
+.nada {
   border: none;
   font-size: large;
   text-align: center;
@@ -173,29 +173,26 @@ input[type='number'],.nada {
   cursor: pointer;
 }
 
-
-
-
 /*//!Estilos extras*/
 .total2 {
   font-size: 30px;
 }
-.space_lefth{
+.space_lefth {
   width: 0.3cm;
 }
 .space {
   width: 1.08cm;
 }
-.imprimir{
+.imprimir {
   margin-right: 30px;
 }
-.borrar{
+.borrar {
   margin-right: 55%;
 }
-.refresh{
+.refresh {
   margin-right: 10px;
 }
-.space_down{
+.space_down {
   margin-bottom: 10px;
 }
 .button {
@@ -219,4 +216,3 @@ input[type='number'],.nada {
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#7dd56f), to(#28b487));
   background: -moz-linear-gradient(top, #7dd56f, #28b487);
 }
-

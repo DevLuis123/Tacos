@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4062/4062916.png" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="ticket.css"/>
     <title>TACOS EL CHINO</title>
   </head>
   <body>
@@ -173,15 +172,15 @@
                 <tbody>
                   <tr>
                     <th>Cebollitas</th>
-                    <td><input type="number" min="0" class=""></td>
+                    <td><input type="number" min="0" class="extras cebolla"></td>
                   </tr>
                   <tr>
                     <th>Doraditas</th>
-                    <td><input type="number" min="0" class=""></td>
+                    <td><input type="number" min="0" class="extras dorada"></td>
                   </tr>
                   <tr>
                     <th>Queso</th>
-                    <td><input type="number" min="0" class=""></td>
+                    <td><input type="number" min="0" class="extras"></td>
                   </tr>
                 </tbody>
               </table>
@@ -193,31 +192,31 @@
             <tbody>
               <tr>
                 <th>Hamburguesa Sencilla</th>
-                <td><input type="number" min="0" class=""></td>
+                <td><input type="number" min="0" class="dogoyburger"></td>
               </tr>
               <tr>
                 <th>Hamburguesa con Papas</th>
-                <td><input type="number" min="0" class=""></td>
+                <td><input type="number" min="0" class="dogoyburger"></td>
               </tr>
               <tr>
-                <th>Dogo Sencilla</th>
-                <td><input type="number" min="0" class=""></td>
+                <th>Dogo Sencillo</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
               </tr>
               <tr>
                 <th>Dogo con Tocino</th>
-                <td><input type="number" min="0" class=""></td>
+                <td><input type="number" min="0" class="dogoyburger"></td>
               </tr>
               <tr>
                 <th>Paquete 3 Dogos Sencillos</th>
-                <td><input type="number" min="0" class=""></td>
+                <td><input type="number" min="0" class="dogoyburger"></td>
               </tr>
               <tr>
                 <th>Paquete 3 Dogos con Tocino</th>
-                <td><input type="number" min="0" class=""></td>
+                <td><input type="number" min="0" class="dogoyburger"></td>
               </tr>
               <tr>
                 <th>Orden de Papas</th>
-                <td><input type="number" min="0" class=""></td>
+                <td><input type="number" min="0" class="dogoyburger"></td>
               </tr>
             </tbody>
           </table>
@@ -320,9 +319,6 @@
         <!-- //! Generar ticket para la compra -->
         <div class="ticket hidden">
           <div id="titulo">TACOS EL CHINO</div>
-	<div id="datos">
-		<p><span class="etiqueta">Fecha:</span> 14 de abril de 2023</p>
-	</div>
 	<table class="productos hidden">
 		<thead>
 			<tr>
@@ -335,7 +331,7 @@
 						
 		</tbody>
 	</table>
-	<div id="total">Total: $prueba</div> 
+	
 </body> 
 </html>
         </div>
@@ -345,7 +341,7 @@
   
   <!-- script para javascript-->
     <script src="app.js"></script>
-    <script src="ticket.js"></script>
+
   <!--- <script src="app.js"></script> -->
   </body>
 </html>

@@ -50,6 +50,8 @@ const tortas = document.querySelectorAll('.tortas');
 const quesadillas = document.querySelectorAll('.quesadillas');
 const gringas = document.querySelectorAll('.gringas');
 //const bara = document.querySelectorAll('.ado');
+const dogoyburger = document.querySelectorAll('.dogoyburger');
+const extras = document.querySelectorAll('.extras');
 
 const productos = {
   tacos: {
@@ -119,34 +121,29 @@ let array = [];
 
 const getLocalStorageConsumido = function (noMesa, comida) {
   return JSON.parse(localStorage.getItem(`mesa${noMesa}${comida}`));
-
-  // } else if (`${comida}` = 'Tortas') {
-  //   array = localStorage.getItem(`mesa${noMesa}Tortas`);
-  //   return array;
-  // } else if (`${comida}` = 'Ques') {
-  //   array = localStorage.getItem(`mesa${noMesa}Ques`);
-  //   return array;
-  // } else if (`${comida}` = 'Gringa') {
-  //   array = localStorage.getItem(`mesa${noMesa}Gringa`);
-  //   return array;
-  // }
 };
 
 const borarLocal = function (noMesa) {
   removeItem(`mesa${noMesa}`);
 };
 
+//console.log(mesa);
+
 let venta = [];
 let ventaTacos = [];
 let ventaTortas = [];
 let ventaQuesadillas = [];
 let ventaGringas = [];
+let ventaExtras = [];
+let ventaDogosBurger = [];
 
 const resetArrays = function () {
   ventaTacos = [];
   ventaTortas = [];
   ventaQuesadillas = [];
   ventaGringas = [];
+  ventaExtras = [];
+  ventaDogosBurger = [];
 };
 
 const cuentasTa = function (comida) {
@@ -200,12 +197,46 @@ const cuentasG = function (comida) {
   return aux;
 };
 
+const cuentasE = function (comida) {
+  let aux = 0;
+  comida.forEach(function (element) {
+    if (element.classList.contains('cebolla')) {
+      aux += element.value * 5;
+    } else if (element.classList.contains('dorada')) {
+      aux += element.value * 2;
+    } else {
+      aux += element.value * 15;
+    }
+  });
+  return aux;
+};
+
+const mapPrice = new Map([
+  [0, 50],
+  [1, 60],
+  [2, 18],
+  [3, 22],
+  [4, 50],
+  [5, 60],
+  [6, 28],
+]);
+
+const cuentasDH = function (comida) {
+  let aux = 0;
+  for (let i = 0; i < comida.length; i++) {
+    aux += comida[i].value * mapPrice.get(i);
+  }
+  return aux;
+};
+
 const totalC = function () {
   return (
     cuentasTa(tacos) +
     cuentasTo(tortas) +
     cuentasQ(quesadillas) +
-    cuentasG(gringas)
+    cuentasG(gringas) +
+    cuentasE(extras) +
+    cuentasDH(dogoyburger)
   );
 };
 
@@ -226,21 +257,15 @@ const guardarCantidad = function (noMesa) {
     ventaGringas.push(element.value);
     localStorage.setItem(`mesa${noMesa}Gringa`, JSON.stringify(ventaGringas));
   });
+  extras.forEach(function (element) {
+    ventaExtras.push(element.value);
+    localStorage.setItem(`mesa${noMesa}Ext`, JSON.stringify(ventaExtras));
+  });
+  dogoyburger.forEach(function (element) {
+    ventaDogosBurger.push(element.value);
+    localStorage.setItem(`mesa${noMesa}dh`, JSON.stringify(ventaDogosBurger));
+  });
 };
-
-// ventana.forEach(mesa => {
-//   if (mesa.classList.contains('mesa1')) {
-//     totalBtn.addEventListener('click', function (e) {
-//       e.preventDefault();
-//       guardarCantidad();
-//       setLocalStorageConsumido(ventaTacos, 1);
-//       totalText.textContent = totalC();
-
-//       resetArrays();
-//       venta = [];
-//     });
-//   }
-// });
 
 const setearInputsFromLS = function (arrayk, comida) {
   if (arrayk !== null) {
@@ -261,6 +286,8 @@ const logicaMesa = function (noMesa) {
     quesadillas
   );
   setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'Gringa'), gringas);
+  setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'Ext'), extras);
+  setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'dh'), dogoyburger);
 };
 
 // Creamos un mapa para el orden de las carnes
@@ -275,8 +302,15 @@ const carnes = new Map([
   [7, 'Mixto'],
 ]);
 
+//Creamos un mapa de extras
+const extrasMap = new Map([
+  [0, 'Cebollita'],
+  [1, 'Dorada'],
+  [2, 'Ext Queso'],
+]);
+
 const ticketBtn = document.querySelector('.imprimir');
-const tabla = document.querySelector('.productos');
+//const tabla = document.querySelector('.productos');
 
 const anadirTicket = function (noMesa) {
   const tabla = document.querySelector('.productos');
@@ -291,8 +325,8 @@ const anadirTicket = function (noMesa) {
       celda2.innerHTML = tacos[i];
       let celda3 = fila.insertCell();
       i === 0 || i === 1
-        ? (celda3.innerHTML = tacos[i] * 15)
-        : (celda3.innerHTML = tacos[i] * 20);
+        ? (celda3.innerHTML = `$${tacos[i] * 15}`)
+        : (celda3.innerHTML = `$${tacos[i] * 20}`);
     }
   }
 };
@@ -310,8 +344,8 @@ const anadirTicket2 = function (noMesa) {
       celda2.innerHTML = tortas[i];
       let celda3 = fila.insertCell();
       i === 0 || i === 1
-        ? (celda3.innerHTML = tortas[i] * 50)
-        : (celda3.innerHTML = tortas[i] * 60);
+        ? (celda3.innerHTML = `$${tortas[i] * 50}`)
+        : (celda3.innerHTML = `$${tortas[i] * 60}`);
     }
   }
 };
@@ -329,25 +363,135 @@ const anadirTicket3 = function (noMesa) {
       celda2.innerHTML = quesadillas[i];
       let celda3 = fila.insertCell();
       i === 0 || i === 1
-        ? (celda3.innerHTML = quesadillas[i] * 60)
-        : (celda3.innerHTML = quesadillas[i] * 70);
+        ? (celda3.innerHTML = `$${quesadillas[i] * 60}`)
+        : (celda3.innerHTML = `$${quesadillas[i] * 70}`);
     }
   }
 };
 
+const anadirTicket4 = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const gringa = getLocalStorageConsumido(`${noMesa}`, 'Gringa');
+  for (let i = 0; i < gringa.length; i++) {
+    if (gringa[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Gringa ${carnes.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = gringa[i];
+      let celda3 = fila.insertCell();
+      i === 0 || i === 1
+        ? (celda3.innerHTML = `$${gringa[i] * 60}`)
+        : (celda3.innerHTML = `$${gringa[i] * 70}`);
+    }
+  }
+};
+
+const anadirTicket5 = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const ext = getLocalStorageConsumido(`${noMesa}`, 'Ext');
+  for (let i = 0; i < ext.length; i++) {
+    if (ext[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${extrasMap.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = ext[i];
+      let celda3 = fila.insertCell();
+      if (i === 0) {
+        celda3.innerHTML = `$${ext[i] * 5}`;
+      } else if (i === 1) {
+        celda3.innerHTML = `$${ext[i] * 2}`;
+      } else {
+        celda3.innerHTML = `$${ext[i] * 15}`;
+      }
+    }
+  }
+};
 //console.log(tabla.innerHTML);
 
+const mapDogosYBurger = new Map([
+  [0, 'Hamburguesa Sencillla'],
+  [1, 'Hamburguesa con Papas'],
+  [2, 'Dogo Sencillo'],
+  [3, 'Dogo con Tocino'],
+  [4, 'Paquete 3 Dogos Sencillos'],
+  [5, 'Paquete 3 Dogos con Tocino'],
+  [6, 'Orden de Papas'],
+]);
+
+const anadirTicket6 = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const dodoBurger = getLocalStorageConsumido(`${noMesa}`, 'dh');
+
+  for (let i = 0; i < dodoBurger.length; i++) {
+    if (dodoBurger[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${mapDogosYBurger.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = dodoBurger[i];
+      let celda3 = fila.insertCell();
+      celda3.innerHTML = `$${dodoBurger[i] * mapPrice.get(i)}`;
+    }
+  }
+};
+
 function imprimirContenido() {
-  let contenido = document.querySelector('.ticket').innerHTML;
-  let ventanaImpresion = window.open('', '', 'height=500,width=700');
-  //ventanaImpresion.document.write('<html><head><title>TACOS EL CHINO</title>');
-  ventanaImpresion.document.write('</head><body >');
+  const contenido = document.querySelector('.ticket').innerHTML;
 
-  ventanaImpresion.document.write(contenido);
+  // Crear un nuevo documento en una ventana de impresión
+  const ventanaImpresion = window.open('', '', 'height=500,width=700');
+  ventanaImpresion.document.title = 'TACOS EL CHINO';
 
-  ventanaImpresion.document.write('<br>');
-  ventanaImpresion.document.write('REVISE SU CAMBIO ANTES DE SALIR');
-  ventanaImpresion.document.write('</body></html>');
+  // Crear elementos para el contenido del ticket y añadirlos al cuerpo del documento de impresión
+  const body = ventanaImpresion.document.body;
+
+  const titleTicket = document.createElement('h1');
+  titleTicket.textContent = 'TACOS EL CHINO ';
+  body.appendChild(titleTicket);
+
+  //Obtenemos Fecha
+  const today = new Date();
+  const dateTime = today.toLocaleString('fr-FR', { hour12: false });
+  const timeDate = document.createElement('p');
+  timeDate.textContent = `Fecha: ${dateTime}`;
+  body.appendChild(timeDate);
+
+  //
+  const renglones = document.createElement('p');
+  renglones.textContent =
+    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -';
+  //Separamos Contenido
+  body.appendChild(renglones);
+
+  const ticketContent = document.createElement('div');
+  ticketContent.innerHTML = contenido;
+  body.appendChild(ticketContent);
+
+  const totalCuenta = document.createElement('h3');
+  totalCuenta.textContent = `TOTAL: $${totalC()}`;
+  body.appendChild(totalCuenta);
+
+  const renglones2 = document.createElement('p');
+  renglones2.textContent =
+    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -';
+  //Separamos contenido
+  body.appendChild(renglones2);
+
+  // Añadir mensaje de revisión de cambio
+  const cambioMessage = document.createElement('p');
+  cambioMessage.textContent = 'REVISE SU CAMBIO ANTES DE SALIR';
+  body.appendChild(cambioMessage);
+
+  const thanksMessage = document.createElement('h2');
+  thanksMessage.textContent = 'Agradecemos su preferencia';
+  body.appendChild(thanksMessage);
+
+  // Cerrar el documento y enfocarse en la ventana de impresión para imprimir
   ventanaImpresion.document.close();
   ventanaImpresion.focus();
   ventanaImpresion.print();
@@ -359,8 +503,20 @@ for (let index of showModal.keys()) {
     anadirTicket(index + 1);
     anadirTicket2(index + 1);
     anadirTicket3(index + 1);
+    anadirTicket4(index + 1);
+    anadirTicket5(index + 1);
+    anadirTicket6(index + 1);
   });
 }
+
+// const tickets = function (noMesa) {
+//   anadirTicket(noMesa + 1);
+//   anadirTicket2(noMesa + 1);
+//   anadirTicket3(noMesa + 1);
+//   anadirTicket4(noMesa + 1);
+//   anadirTicket5(noMesa + 1);
+//   anadirTicket6(noMesa + 1);
+// };
 
 ticketBtn.addEventListener('click', imprimirContenido);
 
@@ -368,29 +524,20 @@ for (let i = 0; i < showModal.length; i++) {
   const mesas = document.querySelector('.mesas');
 
   showModal[i].addEventListener('click', remove);
+
   showModal[i].addEventListener('click', function () {
     mesas.textContent = `Mesa ${i + 1}`;
     if (showModal[i].classList.contains(`mesa${i + 1}`)) {
       logicaMesa(i + 1);
       totalBtn.addEventListener('click', function (e) {
         e.preventDefault();
+        //tickets(i + 1);
         //anadirTicket(i + 1);
         guardarCantidad(i + 1);
         resetArrays();
         venta = [];
-        totalText.textContent = totalC();
+        totalText.textContent = `$${totalC()}`;
       });
     }
   });
 }
-
-//crearLocalStorages();
-
-//!ESTO ESTA AQUI COMO EJEMPLO
-//setearInputsFromLS(arrayTo, tortas);
-//setearInputsFromLS(arrayQues, quesadillas);
-//setearInputsFromLS(arrayGrin, gringas);
-//localStorage.setItem(`mesa${noMesa}Tacos`, JSON.stringify(tacoArray));
-//localStorage.setItem(`mesa${noMesa}Tortas`, JSON.stringify(tortasArray));
-//localStorage.setItem(`mesa${noMesa}Ques`, JSON.stringify(quesadillasArray));
-//localStorage.setItem(`mesa${noMesa}Gringa`, JSON.stringify(gringaArray));
