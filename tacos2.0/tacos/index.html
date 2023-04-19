@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4062/4062916.png" />
+    <link rel="stylesheet" href="index.css" />
+    <title>TACOS EL CHINO</title>
+  </head>
+  <body>
+    <header><h1 class="encabezado">TACOS EL CHINO</h1></header>
+    
+    <div class="contenedor">
+      <div class="contenido1">
+        <button class="show-modal btnMain efect mesa1" id="1">Mesa 1</button>
+        <button class="show-modal btnMain efect mesa2" id="2">Mesa 2</button>
+        <button class="show-modal btnMain efect mesa3" id="3">Mesa 3</button>
+        <button class="show-modal btnMain efect mesa4" id="4">Mesa 4</button>
+        <button class="show-modal btnMain efect mesa5" id="5">Mesa 5</button>
+      </div>
+      <div class="contenido2">
+        <button class="show-modal btnMain efect mesa6" id="6">Mesa 6</button>
+        <button class="show-modal btnMain efect mesa7" id="7">Mesa 7</button>
+        <button class="show-modal btnMain efect mesa8" id="8">Mesa 8</button>
+        <button class="show-modal btnMain efect mesa9" id="9">Mesa 9</button>
+        <button class="show-modal btnMain efect mesa10" id="10">Mesa 10</button>
+      </div>
+      <div class="contenido3">
+        <button class="show-modal btnMain efect mesa11" name="mesa11">Mesa 11</button>
+        <button class="show-modal btnMain efect mesa12" name="mesa12">Mesa 12</button>
+        <button class="show-modal btnMain efect mesa13" name="mesa13">Mesa 13</button>
+        <button class="show-modal btnMain efect mesa14" name="mesa14">Mesa 14</button>
+        <button class="btnMain1 efect">Ayuda</button>
+      </div>
+    </div>
+
+  <div class="modal hidden">
+    <button class="close-modal">&times;</button>
+    <h1 class="mesas"></h1>
+    <div class="contenedor4">
+          <table class="space_down">
+            <thead>
+              <tr>
+                <td></td>
+                <th>Adobad</th>
+                <th>Longaniza</th>
+                <th>Cachete</th>
+                <th>Chorizo</th>
+                <th>Res</th>
+                <th>Salchicha</th>
+                <th>Tripa</th>
+                <th>Mixto</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <th>Tacos</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoAdobada active tacos ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoLonganiza active tacos ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoCachete active tacos" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoChorizo active tacos" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoRes active tacos" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoSalchicha active tacos" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoTripa active tacos" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tacoMixto active tacos" />
+                </td>
+              </tr>
+              <tr>
+                <th>Tortas</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaAdobada active tortas ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaLonganiza active tortas ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaCachete active tortas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaChorizo active tortas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaRes active tortas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaSalchicha active tortas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaTripa active tortas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="tortaMixto active tortas" />
+                </td>
+              </tr>
+              <tr>
+                <th>Quesadillas</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaAdobada active quesadillas ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaLonganiza active quesadillas ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaCachete active quesadillas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaChorizo active quesadillas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaRes active quesadillas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaSalchicha active quesadillas" />
+                </td>
+                <td>
+                  <input  type="number" value="" min="0"  name="cantidad" class="quesadillaTripa active quesadillas"  />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="quesadillaMixto active quesadillas" />
+                </td>
+              </tr>
+              <tr>
+                <th>Gringas</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaAdobada active gringas ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaLonganiza active gringas ado" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaCachete active gringas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaChorizo active gringas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaRes active gringas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaSalchicha active gringas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaTripa active gringas" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="gringaMixto active gringas" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="space_lefth"></div>
+          <table class="space_down">
+                <thead>
+                  <td></td>
+                  <th>Extras</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Cebollitas</th>
+                    <td><input type="number" min="0" class="extras cebolla"></td>
+                  </tr>
+                  <tr>
+                    <th>Doraditas</th>
+                    <td><input type="number" min="0" class="extras dorada"></td>
+                  </tr>
+                  <tr>
+                    <th>Queso</th>
+                    <td><input type="number" min="0" class="extras"></td>
+                  </tr>
+                </tbody>
+              </table>
+          <table>
+            <thead>
+              <td></td>
+              <th>Cantidad</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Hamburguesa Sencilla</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
+              </tr>
+              <tr>
+                <th>Hamburguesa con Papas</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
+              </tr>
+              <tr>
+                <th>Dogo Sencillo</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
+              </tr>
+              <tr>
+                <th>Dogo con Tocino</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
+              </tr>
+              <tr>
+                <th>Paquete 3 Dogos Sencillos</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
+              </tr>
+              <tr>
+                <th>Paquete 3 Dogos con Tocino</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
+              </tr>
+              <tr>
+                <th>Orden de Papas</th>
+                <td><input type="number" min="0" class="dogoyburger"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="space"></div>
+          <table>
+            <thead>
+              <td></td>
+              <th>Grande</th>
+              <th>Chica</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Coca Cola</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="coca6ml active">
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="coca3ml active" >
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="hidden" >
+                </td>
+              </tr>
+              <tr>
+                <th>Coca Light</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="cocaLight6ml active" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="cocaLight3ml active" />
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="hidden" />
+                </td>
+              </tr>
+              <tr>
+                <th>Fanta</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="fanta6ml active" >
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="fanta3ml active">
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="hidden" >
+                </td>
+              </tr>
+              <tr>
+                <th>Sprite</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="srite6ml active" >
+                </td>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="srite3ml active" >
+                </td>
+              </tr>
+              <tr>
+                <th>Agua Fresca</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="" >
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <div class="space"></div>
+          <table>
+            <thead>
+              <td></td>
+              <th>Laton</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Estrella</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="latonEstrella active" >
+                </td>
+              </tr>
+              <tr>
+                <th>Corona Extra</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="latonCoronaExtra active" >
+                </td>
+              </tr>
+              <tr>
+                <th>Corona Light</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="latonCoronaLight active" >
+                </td>
+              </tr>
+              <t>
+                <th>Modelo</th>
+                <td>
+                  <input type="number" value="" min="0" name="cantidad" class="latonModelo active" >
+                </td>
+              </t r>
+            </tbody>
+          </table>
+        </div>
+        <div class="parte-baja-hidden">
+        <button class="imprimir button">Imprimir Ticket</button>
+        <button id="reload" class="borrar button" onclick="reiniciarlocal()" >Borrar</button>
+        <button id="refresh" class="refresh button">Total</button>
+        <p class="total2">0.ºº</p>
+        </div>
+        
+        <!-- //! Generar ticket para la compra -->
+        <div class="ticket hidden">
+          <div id="titulo">TACOS EL CHINO</div>
+	<table class="productos hidden">
+		<thead>
+			<tr>
+				<th>Producto</th>
+				<th>Cantidad</th>
+				<th>Subtotal</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	
+</body> 
+</html>
+        </div>
+    </div>
+  </div>
+  <div class="overlay hidden"></div>
+  
+  <!-- script para javascript-->
+    <script src="app.js"></script>
+
+  <!--- <script src="app.js"></script> -->
+  </body>
+</html>

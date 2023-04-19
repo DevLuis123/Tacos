@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+
+}
+
+.margin-container {
+    margin: 100px auto;
+    max-width: 1000px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 3rem;
+}
+
+.mesa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    border: solid rgba(0, 0, 0, 0.253) 1px;
+    box-shadow: 0px 5px 0 #0c0c0c3a;
+}
+
+
+.mesa p {
+    font-weight: bold;
+    position: absolute;
+    z-index: 100;
+    color: #0c0c0c;
+}
+
+.mesa img {
+    width: 200px;
+}
+
+.mesa:hover {
+    transform: scale(1.2);
+}
