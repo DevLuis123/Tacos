@@ -35,12 +35,6 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-//Funcion para recargar la pagina
-//let refresh = document.getElementById('refresh');
-//refresh.addEventListener('click', _ => {
-//  location.reload();
-//});
-
 const totalBtn = document.querySelector('.refresh');
 const totalText = document.querySelector('.total2');
 const ventana = document.querySelectorAll('.btnMain');
@@ -53,61 +47,8 @@ const gringas = document.querySelectorAll('.gringas');
 const dogoyburger = document.querySelectorAll('.dogoyburger');
 const extras = document.querySelectorAll('.extras');
 
-const productos = {
-  tacos: {
-    adobada: 15,
-    longaniza: 15,
-    res: 20,
-    cachete: 20,
-    tripa: 20,
-    salchicha: 20,
-    chorizo: 20,
-    mixto: 25,
-  },
-  tortas: {
-    adobada: 50,
-    longaniza: 50,
-    res: 60,
-    cachete: 60,
-    tripa: 60,
-    salchicha: 60,
-    chorizo: 60,
-    mixto: 70,
-  },
-  quesadillas: {
-    adobada: 60,
-    longaniza: 60,
-    res: 70,
-    cachete: 70,
-    tripa: 70,
-    salchicha: 70,
-    chorizo: 70,
-    mixto: 80,
-  },
-  gringas: {
-    adobada: 120,
-    longaniza: 120,
-    res: 130,
-    cachete: 130,
-    tripa: 130,
-    salchicha: 130,
-    chorizo: 130,
-    mixto: 140,
-  },
-};
-
-// const setLocalStorageConsumido = function (
-//   tacoArray,
-//   tortasArray,
-//   quesadillasArray,
-//   gringaArray,
-//   noMesa
-// ) {
-//   localStorage.setItem(`mesa${noMesa}Tacos`, JSON.stringify(tacoArray));
-//   localStorage.setItem(`mesa${noMesa}Tortas`, JSON.stringify(tortasArray));
-//   localStorage.setItem(`mesa${noMesa}Ques`, JSON.stringify(quesadillasArray));
-//   localStorage.setItem(`mesa${noMesa}Gringa`, JSON.stringify(gringaArray));
-// };
+const bebidasSinAlchol = document.querySelectorAll('.bebidasNA');
+const alcholicas = document.querySelectorAll('.alcholicas');
 
 const setLocalStorageTotal = function (total, noMesa) {
   localStorage.setItem(`mesa${noMesa}T`, JSON.stringify(total));
@@ -136,6 +77,8 @@ let ventaQuesadillas = [];
 let ventaGringas = [];
 let ventaExtras = [];
 let ventaDogosBurger = [];
+let ventabebidas = [];
+let ventabebidasAlcholicas = [];
 
 const resetArrays = function () {
   ventaTacos = [];
@@ -144,87 +87,139 @@ const resetArrays = function () {
   ventaGringas = [];
   ventaExtras = [];
   ventaDogosBurger = [];
+  ventabebidas = [];
+  ventabebidasAlcholicas = [];
 };
-
+//25
 const cuentasTa = function (comida) {
   let aux = 0;
 
   comida.forEach(function (element) {
     if (element.classList.contains('ado')) {
-      aux += element.value * productos.tacos.adobada;
+      aux += element.value * 15;
     } else {
-      aux += element.value * productos.tacos.cachete;
+      aux += element.value * 20;
     }
   });
   return aux;
 };
 
+//75
 const cuentasTo = function (comida) {
   let aux = 0;
 
   comida.forEach(function (element) {
     if (element.classList.contains('ado')) {
-      aux += element.value * productos.tortas.adobada;
+      aux += element.value * 55;
     } else {
-      aux += element.value * productos.tortas.cachete;
+      aux += element.value * 65;
     }
   });
   return aux;
 };
 
+//85
 const cuentasQ = function (comida) {
   let aux = 0;
 
   comida.forEach(function (element) {
     if (element.classList.contains('ado')) {
-      aux += element.value * productos.quesadillas.adobada;
+      aux += element.value * 70;
     } else {
-      aux += element.value * productos.quesadillas.cachete;
+      aux += element.value * 80;
     }
   });
   return aux;
 };
+
+//140
 const cuentasG = function (comida) {
   let aux = 0;
 
   comida.forEach(function (element) {
     if (element.classList.contains('ado')) {
-      aux += element.value * productos.gringas.adobada;
+      aux += element.value * 120;
     } else {
-      aux += element.value * productos.gringas.cachete;
+      aux += element.value * 130;
     }
   });
   return aux;
 };
 
+const pricesExt = [5, 2, 15, 10, 40];
+
 const cuentasE = function (comida) {
   let aux = 0;
-  comida.forEach(function (element) {
-    if (element.classList.contains('cebolla')) {
-      aux += element.value * 5;
-    } else if (element.classList.contains('dorada')) {
-      aux += element.value * 2;
-    } else {
-      aux += element.value * 15;
-    }
-  });
+  for (let i = 0; i < comida.length; i++) {
+    aux += comida[i].value * pricesExt[i];
+  }
   return aux;
 };
 
 const mapPrice = new Map([
   [0, 50],
   [1, 60],
-  [2, 18],
-  [3, 22],
-  [4, 50],
-  [5, 60],
-  [6, 28],
+  [2, 20],
+  [3, 25],
+  [4, 15],
+  [5, 50],
+  [6, 35],
 ]);
 
 const cuentasDH = function (comida) {
   let aux = 0;
   for (let i = 0; i < comida.length; i++) {
     aux += comida[i].value * mapPrice.get(i);
+  }
+  return aux;
+};
+
+//Mapa
+const bebidasMap = new Map([
+  [0, 'Bebida 355ml'],
+  [1, 'Bebida 600ml'],
+  [2, 'Agua Ciel'],
+  [3, 'Jugo del Valle 250ml'],
+  [4, 'Agua Fresca Chica'],
+  [5, 'Agua Fresca Grande'],
+]);
+
+const bebidasPrice = new Map([
+  [0, 22],
+  [1, 28],
+  [2, 15],
+  [3, 15],
+  [4, 15],
+  [5, 30],
+]);
+
+//Bebidas
+const cuentasBebidas = function (comida) {
+  let aux = 0;
+  for (let i = 0; i < comida.length; i++) {
+    aux += comida[i].value * bebidasPrice.get(i);
+  }
+  return aux;
+};
+
+//Bebidas Alcholicas
+
+const mapAlcholicas = new Map([
+  [0, 'Laton'],
+  [1, 'Coronita Light'],
+  [2, 'Corona Familiar'],
+]);
+
+const mapAlcholicasPrice = new Map([
+  [0, 35],
+  [1, 30],
+  [2, 60],
+]);
+
+const cuentasAlcholicas = function (comida) {
+  let aux = 0;
+  for (let i = 0; i < comida.length; i++) {
+    aux += comida[i].value * mapAlcholicasPrice.get(i);
   }
   return aux;
 };
@@ -236,7 +231,9 @@ const totalC = function () {
     cuentasQ(quesadillas) +
     cuentasG(gringas) +
     cuentasE(extras) +
-    cuentasDH(dogoyburger)
+    cuentasDH(dogoyburger) +
+    cuentasBebidas(bebidasSinAlchol) +
+    cuentasAlcholicas(alcholicas)
   );
 };
 
@@ -265,6 +262,17 @@ const guardarCantidad = function (noMesa) {
     ventaDogosBurger.push(element.value);
     localStorage.setItem(`mesa${noMesa}dh`, JSON.stringify(ventaDogosBurger));
   });
+  bebidasSinAlchol.forEach(function (element) {
+    ventabebidas.push(element.value);
+    localStorage.setItem(`mesa${noMesa}b`, JSON.stringify(ventabebidas));
+  });
+  alcholicas.forEach(function (element) {
+    ventabebidasAlcholicas.push(element.value);
+    localStorage.setItem(
+      `mesa${noMesa}bA`,
+      JSON.stringify(ventabebidasAlcholicas)
+    );
+  });
 };
 
 const setearInputsFromLS = function (arrayk, comida) {
@@ -288,6 +296,11 @@ const logicaMesa = function (noMesa) {
   setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'Gringa'), gringas);
   setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'Ext'), extras);
   setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'dh'), dogoyburger);
+  setearInputsFromLS(
+    getLocalStorageConsumido(`${noMesa}`, 'b'),
+    bebidasSinAlchol
+  );
+  setearInputsFromLS(getLocalStorageConsumido(`${noMesa}`, 'bA'), alcholicas);
 };
 
 // Creamos un mapa para el orden de las carnes
@@ -307,6 +320,8 @@ const extrasMap = new Map([
   [0, 'Cebollita'],
   [1, 'Dorada'],
   [2, 'Ext Queso'],
+  [3, 'Taco de Frijol'],
+  [4, 'Quesadilla Sencilla'],
 ]);
 
 const ticketBtn = document.querySelector('.imprimir');
@@ -400,13 +415,7 @@ const anadirTicket5 = function (noMesa) {
       let celda2 = fila.insertCell();
       celda2.innerHTML = ext[i];
       let celda3 = fila.insertCell();
-      if (i === 0) {
-        celda3.innerHTML = `$${ext[i] * 5}`;
-      } else if (i === 1) {
-        celda3.innerHTML = `$${ext[i] * 2}`;
-      } else {
-        celda3.innerHTML = `$${ext[i] * 15}`;
-      }
+      celda3.innerHTML = `$${ext[i] * pricesExt[i]}`;
     }
   }
 };
@@ -414,11 +423,11 @@ const anadirTicket5 = function (noMesa) {
 
 const mapDogosYBurger = new Map([
   [0, 'Hamburguesa Sencillla'],
-  [1, 'Hamburguesa con Papas'],
-  [2, 'Dogo Sencillo'],
-  [3, 'Dogo con Tocino'],
-  [4, 'Paquete 3 Dogos Sencillos'],
-  [5, 'Paquete 3 Dogos con Tocino'],
+  [1, 'Hamburguesa con Papas y Queso'],
+  [2, 'Hot-Dog Sencillo'],
+  [3, 'Hot-Dog con Tocino'],
+  [4, 'Salchicha c/s tocino'],
+  [5, 'Salchipulpos (100gr, 2 salchichas)'],
   [6, 'Orden de Papas'],
 ]);
 
@@ -440,6 +449,42 @@ const anadirTicket6 = function (noMesa) {
   }
 };
 
+const anadirTicket7 = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const bebidas = getLocalStorageConsumido(`${noMesa}`, 'b');
+
+  for (let i = 0; i < bebidas.length; i++) {
+    if (bebidas[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${bebidasMap.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = bebidas[i];
+      let celda3 = fila.insertCell();
+      celda3.innerHTML = `$${bebidas[i] * bebidasPrice.get(i)}`;
+    }
+  }
+};
+
+const anadirTicket8 = function (noMesa) {
+  const tabla = document.querySelector('.productos');
+
+  const bebidasA = getLocalStorageConsumido(`${noMesa}`, 'bA');
+
+  for (let i = 0; i < bebidasA.length; i++) {
+    if (bebidasA[i] != 0) {
+      let fila = tabla.insertRow();
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${mapAlcholicas.get(i)}`;
+      let celda2 = fila.insertCell();
+      celda2.innerHTML = bebidasA[i];
+      let celda3 = fila.insertCell();
+      celda3.innerHTML = `$${bebidasA[i] * mapAlcholicasPrice.get(i)}`;
+    }
+  }
+};
+
 function imprimirContenido() {
   const contenido = document.querySelector('.ticket').innerHTML;
 
@@ -452,13 +497,22 @@ function imprimirContenido() {
 
   const titleTicket = document.createElement('h1');
   titleTicket.textContent = 'TACOS EL CHINO ';
+  titleTicket.style.textAlign = 'center';
   body.appendChild(titleTicket);
+
+  //
+  const addres = document.createElement('p');
+  addres.textContent =
+    'Vicente Suárez 264, Villas Alameda, 28984 Villa de Álvarez, Col., México';
+  addres.style.textAlign = 'center';
+  body.appendChild(addres);
 
   //Obtenemos Fecha
   const today = new Date();
   const dateTime = today.toLocaleString('fr-FR', { hour12: false });
   const timeDate = document.createElement('p');
   timeDate.textContent = `Fecha: ${dateTime}`;
+  timeDate.style.textAlign = 'center';
   body.appendChild(timeDate);
 
   //
@@ -474,6 +528,7 @@ function imprimirContenido() {
 
   const totalCuenta = document.createElement('h3');
   totalCuenta.textContent = `TOTAL: $${totalC()}`;
+  totalCuenta.style.textAlign = 'center';
   body.appendChild(totalCuenta);
 
   const renglones2 = document.createElement('p');
@@ -483,12 +538,21 @@ function imprimirContenido() {
   body.appendChild(renglones2);
 
   // Añadir mensaje de revisión de cambio
+  const alertMessage = document.createElement('p');
+  alertMessage.textContent = '*No se hacen cuentas por separado*';
+  alertMessage.style.textAlign = 'center';
+  body.appendChild(alertMessage);
+
+  // Añadir mensaje de revisión de cambio
   const cambioMessage = document.createElement('p');
-  cambioMessage.textContent = 'REVISE SU CAMBIO ANTES DE SALIR';
+  cambioMessage.textContent = 'Revise su cambio antes de salir';
+  cambioMessage.style.fontWeight = 'bold';
+  cambioMessage.style.textAlign = 'center';
   body.appendChild(cambioMessage);
 
   const thanksMessage = document.createElement('h2');
   thanksMessage.textContent = 'Agradecemos su preferencia';
+  thanksMessage.style.textAlign = 'center';
   body.appendChild(thanksMessage);
 
   // Cerrar el documento y enfocarse en la ventana de impresión para imprimir
@@ -506,6 +570,8 @@ for (let index of showModal.keys()) {
     anadirTicket4(index + 1);
     anadirTicket5(index + 1);
     anadirTicket6(index + 1);
+    anadirTicket7(index + 1);
+    anadirTicket8(index + 1);
   });
 }
 
@@ -532,7 +598,6 @@ for (let i = 0; i < showModal.length; i++) {
       totalBtn.addEventListener('click', function (e) {
         e.preventDefault();
         //tickets(i + 1);
-        //anadirTicket(i + 1);
         guardarCantidad(i + 1);
         resetArrays();
         venta = [];
