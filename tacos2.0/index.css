@@ -3,6 +3,7 @@ html,
   margin: 0;
   padding: 0;
   font-size: 63%;
+  user-select: none;
 }
 
 body {
@@ -139,7 +140,7 @@ input[type='number'] {
   transform: translate(-50%, -50%);
   background-color: rgb(255, 255, 255);
   padding: 2% 6%;
-  width: 683px;
+  width: 800px;
   border-radius: 5px;
   -webkit-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
   -moz-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
@@ -218,6 +219,7 @@ img {
   width: 300px;
   height: 300px;
   border-radius: 50px;
+  pointer-events: none;
 }
 .total2 {
   margin-left: 10px;
@@ -225,7 +227,7 @@ img {
   font-size: 30px;
 }
 .space_lefth {
-  width: 0.3cm;
+  width: 0.2cm;
 }
 .space {
   width: 1cm;
@@ -241,4 +243,8 @@ img {
 }
 .space_down {
   margin-bottom: 10px;
+}
+.mesas{
+  font-size: 2rem;
+  margin-left: 100px;
 }
