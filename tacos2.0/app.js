@@ -65,7 +65,14 @@ const getLocalStorageConsumido = function (noMesa, comida) {
 };
 
 const borarLocal = function (noMesa) {
-  removeItem(`mesa${noMesa}`);
+  localStorage.removeItem(`mesa${noMesa}Tacos`);
+  localStorage.removeItem(`mesa${noMesa}Tortas`);
+  localStorage.removeItem(`mesa${noMesa}Ques`);
+  localStorage.removeItem(`mesa${noMesa}Gringa`);
+  localStorage.removeItem(`mesa${noMesa}dh`);
+  localStorage.removeItem(`mesa${noMesa}bA`);
+  localStorage.removeItem(`mesa${noMesa}b`);
+  localStorage.removeItem(`mesa${noMesa}Ext`);
 };
 
 //console.log(mesa);
@@ -312,7 +319,7 @@ const carnes = new Map([
   [4, 'Res'],
   [5, 'Salchicha'],
   [6, 'Tripa'],
-  [7, 'Mixto'],
+  [7, 'Mixto/a 2 Ingredientes'],
 ]);
 
 //Creamos un mapa de extras
@@ -326,6 +333,7 @@ const extrasMap = new Map([
 
 const ticketBtn = document.querySelector('.imprimir');
 //const tabla = document.querySelector('.productos');
+const pricesTacos = [15, 20, 25];
 
 const anadirTicket = function (noMesa) {
   const tabla = document.querySelector('.productos');
@@ -339,9 +347,13 @@ const anadirTicket = function (noMesa) {
       let celda2 = fila.insertCell();
       celda2.innerHTML = tacos[i];
       let celda3 = fila.insertCell();
-      i === 0 || i === 1
-        ? (celda3.innerHTML = `$${tacos[i] * 15}`)
-        : (celda3.innerHTML = `$${tacos[i] * 20}`);
+      if (i === 7) {
+        celda3.innerHTML = `$${tacos[i] * 25}`;
+      } else if (i === 0 || i === 1) {
+        celda3.innerHTML = `$${tacos[i] * 15}`;
+      } else {
+        celda3.innerHTML = `$${tacos[i] * 20}`;
+      }
     }
   }
 };
@@ -358,9 +370,13 @@ const anadirTicket2 = function (noMesa) {
       let celda2 = fila.insertCell();
       celda2.innerHTML = tortas[i];
       let celda3 = fila.insertCell();
-      i === 0 || i === 1
-        ? (celda3.innerHTML = `$${tortas[i] * 50}`)
-        : (celda3.innerHTML = `$${tortas[i] * 60}`);
+      if (i === 7) {
+        celda3.innerHTML = `$${tortas[i] * 75}`;
+      } else if (i === 0 || i === 1) {
+        celda3.innerHTML = `$${tortas[i] * 55}`;
+      } else {
+        celda3.innerHTML = `$${tortas[i] * 65}`;
+      }
     }
   }
 };
@@ -377,9 +393,13 @@ const anadirTicket3 = function (noMesa) {
       let celda2 = fila.insertCell();
       celda2.innerHTML = quesadillas[i];
       let celda3 = fila.insertCell();
-      i === 0 || i === 1
-        ? (celda3.innerHTML = `$${quesadillas[i] * 60}`)
-        : (celda3.innerHTML = `$${quesadillas[i] * 70}`);
+      if (i === 7) {
+        celda3.innerHTML = `$${quesadillas[i] * 95}`;
+      } else if (i === 0 || i === 1) {
+        celda3.innerHTML = `$${quesadillas[i] * 70}`;
+      } else {
+        celda3.innerHTML = `$${quesadillas[i] * 80}`;
+      }
     }
   }
 };
@@ -396,9 +416,13 @@ const anadirTicket4 = function (noMesa) {
       let celda2 = fila.insertCell();
       celda2.innerHTML = gringa[i];
       let celda3 = fila.insertCell();
-      i === 0 || i === 1
-        ? (celda3.innerHTML = `$${gringa[i] * 60}`)
-        : (celda3.innerHTML = `$${gringa[i] * 70}`);
+      if (i === 7) {
+        celda3.innerHTML = `$${gringa[i] * 140}`;
+      } else if (i === 0 || i === 1) {
+        celda3.innerHTML = `$${gringa[i] * 120}`;
+      } else {
+        celda3.innerHTML = `$${gringa[i] * 130}`;
+      }
     }
   }
 };
@@ -586,6 +610,36 @@ for (let index of showModal.keys()) {
 
 ticketBtn.addEventListener('click', imprimirContenido);
 
+const borrarBtn = document.querySelector('.borrar');
+
+const limpiarInputs = function () {
+  tacos.forEach(function (element) {
+    element.value = '';
+  });
+  tortas.forEach(function (element) {
+    element.value = '';
+  });
+  quesadillas.forEach(function (element) {
+    element.value = '';
+  });
+  gringas.forEach(function (element) {
+    element.value = '';
+  });
+  extras.forEach(function (element) {
+    element.value = '';
+  });
+  dogoyburger.forEach(function (element) {
+    element.value = '';
+  });
+  bebidasSinAlchol.forEach(function (element) {
+    element.value = '';
+  });
+  alcholicas.forEach(function (element) {
+    element.value = '';
+  });
+  totalText.textContent = `$0`;
+};
+
 for (let i = 0; i < showModal.length; i++) {
   const mesas = document.querySelector('.mesas');
 
@@ -603,6 +657,12 @@ for (let i = 0; i < showModal.length; i++) {
         venta = [];
         totalText.textContent = `$${totalC()}`;
       });
+      borrarBtn.addEventListener('click', function () {
+        borarLocal(i + 1);
+        limpiarInputs();
+      });
     }
   });
 }
+
+for (let i = 0; i < showModal.length; i++) {}

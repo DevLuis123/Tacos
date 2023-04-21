@@ -244,7 +244,11 @@ img {
 .space_down {
   margin-bottom: 10px;
 }
-.mesas{
+.mesas {
   font-size: 2rem;
   margin-left: 100px;
+}
+
+.ticket {
+  page-break-inside: avoid;
 }
