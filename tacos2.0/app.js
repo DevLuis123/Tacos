@@ -586,29 +586,25 @@ function imprimirContenido() {
   ventanaImpresion.close();
 }
 
-for (let index of showModal.keys()) {
-  showModal[index].addEventListener('click', function () {
-    anadirTicket(index + 1);
-    anadirTicket2(index + 1);
-    anadirTicket3(index + 1);
-    anadirTicket4(index + 1);
-    anadirTicket5(index + 1);
-    anadirTicket6(index + 1);
-    anadirTicket7(index + 1);
-    anadirTicket8(index + 1);
-  });
-}
+const tickets = function (noMesa) {
+  anadirTicket(noMesa + 1);
+  anadirTicket2(noMesa + 1);
+  anadirTicket3(noMesa + 1);
+  anadirTicket4(noMesa + 1);
+  anadirTicket5(noMesa + 1);
+  anadirTicket6(noMesa + 1);
+  anadirTicket7(noMesa + 1);
+  anadirTicket8(noMesa + 1);
+};
 
-// const tickets = function (noMesa) {
-//   anadirTicket(noMesa + 1);
-//   anadirTicket2(noMesa + 1);
-//   anadirTicket3(noMesa + 1);
-//   anadirTicket4(noMesa + 1);
-//   anadirTicket5(noMesa + 1);
-//   anadirTicket6(noMesa + 1);
-// };
+// for (let index of showModal.keys()) {
+//   ticketBtn.addEventListener('click', function () {
+//     tickets(index + 1);
+//     imprimirContenido();
+//   });
+// }
 
-ticketBtn.addEventListener('click', imprimirContenido);
+//ticketBtn.addEventListener('click', imprimirContenido);
 
 const borrarBtn = document.querySelector('.borrar');
 
@@ -661,8 +657,14 @@ for (let i = 0; i < showModal.length; i++) {
         borarLocal(i + 1);
         limpiarInputs();
       });
+      ticketBtn.addEventListener('click', function () {
+        guardarCantidad(i + 1);
+        resetArrays();
+        venta = [];
+        tickets(i);
+        imprimirContenido();
+        totalText.textContent = `$${totalC()}`;
+      });
     }
   });
 }
-
-for (let i = 0; i < showModal.length; i++) {}
