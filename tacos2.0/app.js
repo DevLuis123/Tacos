@@ -541,8 +541,7 @@ function imprimirContenido() {
 
   //
   const renglones = document.createElement('p');
-  renglones.textContent =
-    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -';
+  renglones.textContent = ' -'.padStart(98, ' - ');
   //Separamos Contenido
   body.appendChild(renglones);
 
@@ -556,8 +555,7 @@ function imprimirContenido() {
   body.appendChild(totalCuenta);
 
   const renglones2 = document.createElement('p');
-  renglones2.textContent =
-    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -';
+  renglones2.textContent = ' -'.padStart(98, ' - ');
   //Separamos contenido
   body.appendChild(renglones2);
 
