@@ -647,6 +647,12 @@ const limpiarInputs = function () {
   totalText.textContent = `$0`;
 };
 
+function recargarDespuesDeTresSegundos() {
+  setTimeout(function () {
+    location.reload();
+  }, 1000);
+}
+
 for (let i = 0; i < showModal.length; i++) {
   const mesas = document.querySelector('.mesas');
 
@@ -675,7 +681,7 @@ for (let i = 0; i < showModal.length; i++) {
         venta = [];
         tickets(i);
         imprimirContenido();
-        location.reload();
+        recargarDespuesDeTresSegundos();
         totalText.textContent = `$${totalC()}`;
       });
     }
