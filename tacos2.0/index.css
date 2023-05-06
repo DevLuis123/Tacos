@@ -148,6 +148,21 @@ input[type='number'] {
   z-index: 10;
 }
 
+.modal2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  padding: 2% 6%;
+  width: 800px;
+  border-radius: 5px;
+  -webkit-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  z-index: 10;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -251,4 +266,59 @@ img {
 
 .ticket {
   page-break-inside: avoid;
+}
+
+.personas {
+  display: flex;
+  justify-content: center;
+}
+
+.persona {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.persona img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.persona h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.persona p {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+}
+
+.contacto {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.contacto li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.contacto li a {
+  color: #444;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.contacto li a:hover {
+  color: #0077b5;
+}
+
+.dev {
+  text-align: center;
+  font-size: 19px;
 }

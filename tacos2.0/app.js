@@ -3,17 +3,29 @@ const overlay = document.querySelector('.overlay');
 const showModal = document.querySelectorAll('.show-modal');
 const button = document.querySelector('.close-modal');
 
+const modal2 = document.querySelector('.modal2');
+const showModal2 = document.querySelector('.ayuda');
+
 const remove = function () {
   modal.classList.remove('hidden'); //Remove the class that we put it but
   // We not add a point because we dont select anything
   overlay.classList.remove('hidden'); //Remove the class that we put it but
 };
 
+const remove2 = function () {
+  modal2.classList.remove('hidden'); //Remove the class that we put it but
+  // We not add a point because we dont select anything
+  overlay.classList.remove('hidden'); //Remove the class that we put it but
+};
+
 const modale = function () {
   modal.classList.add('hidden');
+  modal2.classList.add('hidden');
   overlay.classList.add('hidden');
   location.reload();
 };
+
+showModal2.addEventListener('click', remove2);
 
 button.addEventListener('click', modale);
 
@@ -542,6 +554,7 @@ function imprimirContenido() {
   //
   const renglones = document.createElement('p');
   renglones.textContent = ' -'.padStart(98, ' - ');
+
   //Separamos Contenido
   body.appendChild(renglones);
 
@@ -654,6 +667,7 @@ for (let i = 0; i < showModal.length; i++) {
       borrarBtn.addEventListener('click', function () {
         borarLocal(i + 1);
         limpiarInputs();
+        //location.reload();
       });
       ticketBtn.addEventListener('click', function () {
         guardarCantidad(i + 1);
@@ -661,6 +675,7 @@ for (let i = 0; i < showModal.length; i++) {
         venta = [];
         tickets(i);
         imprimirContenido();
+        location.reload();
         totalText.textContent = `$${totalC()}`;
       });
     }
