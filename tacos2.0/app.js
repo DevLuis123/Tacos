@@ -1,7 +1,7 @@
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const showModal = document.querySelectorAll('.show-modal');
-const button = document.querySelector('.close-modal');
+const button = document.querySelectorAll('.close-modal');
 
 const modal2 = document.querySelector('.modal2');
 const showModal2 = document.querySelector('.ayuda');
@@ -27,7 +27,9 @@ const modale = function () {
 
 showModal2.addEventListener('click', remove2);
 
-button.addEventListener('click', modale);
+for (let i = 0; i < button.length; i++) {
+  button[i].addEventListener('click', modale);
+}
 
 overlay.addEventListener('click', modale);
 
