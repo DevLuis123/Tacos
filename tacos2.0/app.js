@@ -115,13 +115,15 @@ const resetArrays = function () {
 const cuentasTa = function (comida) {
   let aux = 0;
 
-  comida.forEach(function (element) {
-    if (element.classList.contains('ado')) {
-      aux += element.value * 15;
+  for (let i = 0; i < comida.length; i++) {
+    if (i === 0 || i === 1) {
+      aux += comida[i].value * 15;
+    } else if (i === 7) {
+      aux += comida[i].value * 25;
     } else {
-      aux += element.value * 20;
+      aux += comida[i].value * 20;
     }
-  });
+  }
   return aux;
 };
 
@@ -129,13 +131,15 @@ const cuentasTa = function (comida) {
 const cuentasTo = function (comida) {
   let aux = 0;
 
-  comida.forEach(function (element) {
-    if (element.classList.contains('ado')) {
-      aux += element.value * 55;
+  for (let i = 0; i < comida.length; i++) {
+    if (i === 0 || i === 1) {
+      aux += comida[i].value * 50;
+    } else if (i === 7) {
+      aux += comida[i].value * 65;
     } else {
-      aux += element.value * 65;
+      aux += comida[i].value * 60;
     }
-  });
+  }
   return aux;
 };
 
@@ -143,13 +147,15 @@ const cuentasTo = function (comida) {
 const cuentasQ = function (comida) {
   let aux = 0;
 
-  comida.forEach(function (element) {
-    if (element.classList.contains('ado')) {
-      aux += element.value * 70;
+  for (let i = 0; i < comida.length; i++) {
+    if (i === 0 || i === 1) {
+      aux += comida[i].value * 65;
+    } else if (i === 7) {
+      aux += comida[i].value * 80;
     } else {
-      aux += element.value * 80;
+      aux += comida[i].value * 75;
     }
-  });
+  }
   return aux;
 };
 
@@ -157,13 +163,15 @@ const cuentasQ = function (comida) {
 const cuentasG = function (comida) {
   let aux = 0;
 
-  comida.forEach(function (element) {
-    if (element.classList.contains('ado')) {
-      aux += element.value * 120;
+  for (let i = 0; i < comida.length; i++) {
+    if (i === 0 || i === 1) {
+      aux += comida[i].value * 120;
+    } else if (i === 7) {
+      aux += comida[i].value * 140;
     } else {
-      aux += element.value * 130;
+      aux += comida[i].value * 130;
     }
-  });
+  }
   return aux;
 };
 
@@ -183,8 +191,8 @@ const mapPrice = new Map([
   [2, 20],
   [3, 25],
   [4, 15],
-  [5, 50],
-  [6, 35],
+  [5, 40],
+  [6, 30],
 ]);
 
 const cuentasDH = function (comida) {
@@ -206,8 +214,8 @@ const bebidasMap = new Map([
 ]);
 
 const bebidasPrice = new Map([
-  [0, 22],
-  [1, 28],
+  [0, 20],
+  [1, 25],
   [2, 15],
   [3, 15],
   [4, 15],
@@ -232,9 +240,9 @@ const mapAlcholicas = new Map([
 ]);
 
 const mapAlcholicasPrice = new Map([
-  [0, 35],
-  [1, 30],
-  [2, 60],
+  [0, 30],
+  [1, 25],
+  [2, 50],
 ]);
 
 const cuentasAlcholicas = function (comida) {
@@ -385,11 +393,11 @@ const anadirTicket2 = function (noMesa) {
       celda2.innerHTML = tortas[i];
       let celda3 = fila.insertCell();
       if (i === 7) {
-        celda3.innerHTML = `$${tortas[i] * 75}`;
-      } else if (i === 0 || i === 1) {
-        celda3.innerHTML = `$${tortas[i] * 55}`;
-      } else {
         celda3.innerHTML = `$${tortas[i] * 65}`;
+      } else if (i === 0 || i === 1) {
+        celda3.innerHTML = `$${tortas[i] * 50}`;
+      } else {
+        celda3.innerHTML = `$${tortas[i] * 60}`;
       }
     }
   }
@@ -408,11 +416,11 @@ const anadirTicket3 = function (noMesa) {
       celda2.innerHTML = quesadillas[i];
       let celda3 = fila.insertCell();
       if (i === 7) {
-        celda3.innerHTML = `$${quesadillas[i] * 95}`;
-      } else if (i === 0 || i === 1) {
-        celda3.innerHTML = `$${quesadillas[i] * 70}`;
-      } else {
         celda3.innerHTML = `$${quesadillas[i] * 80}`;
+      } else if (i === 0 || i === 1) {
+        celda3.innerHTML = `$${quesadillas[i] * 65}`;
+      } else {
+        celda3.innerHTML = `$${quesadillas[i] * 75}`;
       }
     }
   }
