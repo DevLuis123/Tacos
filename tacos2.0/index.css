@@ -322,3 +322,8 @@ img {
   text-align: center;
   font-size: 19px;
 }
+
+.centrar-contenido {
+  text-align: center; /* Alinea el contenido horizontalmente al centro */
+  vertical-align: middle; /* Alinea el contenido verticalmente al centro */
+}
